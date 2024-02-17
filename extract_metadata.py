@@ -2,17 +2,18 @@ import openai
 from openai import OpenAI
 from newspaper import Article
 import nltk
-import dotenv
+from dotenv import load_dotenv
 import os
 import json
 import instructor
 from pydantic import BaseModel, Field
 from typing import List, Optional, Union
+import networkx as nx
+import matplotlib.pyplot as plt
 
-dotenv.load_dotenv()
+load_dotenv()
 
 client = instructor.patch(OpenAI())
-
 
 # Define the people model:
 class Person(BaseModel):
@@ -63,6 +64,8 @@ class Event(BaseModel):
     participants: Optional[List[Union[Person, Organization]]] = Field(None, description="The relevant parties to the event")
 
 class ArticleData(BaseModel):
+    summary: str = Field(..., description="A concise summary of the article, roughly 25-35 words.")
+    key_takeaways: List[str] = Field(..., description="Key takeaways from the article, each 10-15 words (1-3 total).", max_items=3)
     people: Optional[List[Person]] = None
     organizations: Optional[List[Organization]] = None
     locations: Optional[List[Location]] = None
@@ -72,9 +75,6 @@ class ArticleData(BaseModel):
     quotes: Optional[List[Quote]] = None  
     events: Optional[List[Event]] = None  
 
-
-import networkx as nx
-import matplotlib.pyplot as plt
 
 def visualize_network(article_data):
     G = nx.Graph()
@@ -93,17 +93,49 @@ def visualize_network(article_data):
 
     plt.show()
 
+def filter_importance(entities, importance_threshold):
+    if not entities:
+        return {}
+    return {entity['name']: entity for entity in entities if entity['importance'] > importance_threshold}
+
+# Function to post-process and update structured data
+def postprocess(article_title, article_data):
+    people_importance = filter_importance(article_data.get('people', []), 3)
+    organization_importance = filter_importance(article_data.get('organizations', []), 3)
+    location_importance = filter_importance(article_data.get('locations', []), 4)
+
+    if len(people_importance) + len(organization_importance) > 3:
+        people_importance = filter_importance(article_data.get('people', []), 4)
+        organization_importance = filter_importance(article_data.get('organizations', []), 4)
+
+    people_importance.update(organization_importance)
+    importants = people_importance
+
+    output = {
+        "title": article_title,
+        "summary": article_data['summary'],
+        "key_takeaways": article_data['key_takeaways'],
+        "importants": importants,
+        "location": location_importance,
+        "bias": "BIAS"
+    }
+
+    return output
 
 
 with open('articles_data.json', 'r') as file:
     articles_data = json.load(file)
+
+
+structured_data = {}
 
 for article in articles_data[3:8]:
     print(f"{article['title']}: {article['summary'][:100]}...")
 
     try:
         article_info = client.chat.completions.create(
-            model="gpt-4-1106-preview",
+            # model="gpt-4-1106-preview",
+            model="gpt-3.5-turbo",
             response_model=ArticleData,
             messages=[
                 {
@@ -117,7 +149,10 @@ for article in articles_data[3:8]:
             ]
         )
 
-        print(article_info.model_dump_json(indent=2))
-        # visualize_network(article_info)
+        structured_data[article['title']] = postprocess(article['title'], article_info.dict())
+    
     except Exception as e:
         print(f"Failed to process article: {e}")
+
+with open('structured_data_output.json', 'w') as file:
+    json.dump(structured_data, file, indent=4)

@@ -1,0 +1,604 @@
+{
+    "Takeaways from the $355 million civil fraud ruling against Donald Trump": {
+        "people": [
+            {
+            "name": "Donald Trump",
+            "importance": 5,
+            "role": "former president",
+            "description": "Fined for fraudulently inflating the values of his properties and defaming E. Jean Carroll."
+            },
+            {
+            "name": "Arthur Engoron",
+            "importance": 4,
+            "role": "Judge",
+            "description": "Issued the ruling against Donald Trump, imposed fines, and barred Trump from serving as director in New York."
+            },
+            {
+            "name": "E. Jean Carroll",
+            "importance": 3,
+            "role": "Defamed by Donald Trump",
+            "description": null
+            },
+            {
+            "name": "Letitia James",
+            "importance": 3,
+            "role": "New York Attorney General",
+            "description": "Requested to fine Trump and other defendants $370 million for fraud."
+            },
+            {
+            "name": "Michael Cohen",
+            "importance": 3,
+            "role": "Trump's former lawyer and fixer",
+            "description": "Credited by Engoron for telling the truth during trial testimony."
+            },
+            {
+            "name": "Allen Weisselberg",
+            "importance": 2,
+            "role": "Former Trump Org. executive",
+            "description": "Vacated CFO position at Trump Organization."
+            },
+            {
+            "name": "Jeff McConney",
+            "importance": 2,
+            "role": "Former Trump Org. executive",
+            "description": "Vacated controller position at Trump Organization."
+            },
+            {
+            "name": "Eric Trump",
+            "importance": 3,
+            "role": "Donald Trump's son",
+            "description": "Barred from serving as executives in New York for two years, and ordered to pay over $4 million in disgorgement."
+            },
+            {
+            "name": "Donald Trump Jr.",
+            "importance": 3,
+            "role": "Donald Trump's son",
+            "description": "Barred from serving as executives in New York for two years, and ordered to pay over $4 million in disgorgement."
+            },
+            {
+            "name": "Ivanka Trump",
+            "importance": 3,
+            "role": "Donald Trump's daughter",
+            "description": "Her testimony was called \"suspect\" by Engoron; dismissed as a defendant by an appeals court ahead of trial."
+            },
+            {
+            "name": "Christopher Kise",
+            "importance": 2,
+            "role": "Trump's attorney",
+            "description": "Responded to Engoron's ruling and stated intention to appeal."
+            }
+        ],
+        "organizations": [
+            {
+            "name": "Trump Organization",
+            "importance": 1,
+            "description": "Faced fines and restrictive measures on its operations as a result of the ruling by Judge Engoron.",
+            "people": [
+                {
+                "name": "Donald Trump",
+                "importance": 5,
+                "role": null,
+                "description": null
+                },
+                {
+                "name": "Eric Trump",
+                "importance": 3,
+                "role": null,
+                "description": null
+                },
+                {
+                "name": "Donald Trump Jr.",
+                "importance": 3,
+                "role": null,
+                "description": null
+                },
+                {
+                "name": "Ivanka Trump",
+                "importance": 3,
+                "role": null,
+                "description": null
+                },
+                {
+                "name": "Allen Weisselberg",
+                "importance": 2,
+                "role": null,
+                "description": null
+                },
+                {
+                "name": "Jeff McConney",
+                "importance": 2,
+                "role": null,
+                "description": null
+                }
+            ]
+            }
+        ],
+        "locations": [
+            {
+            "name": "New York",
+            "importance": 4,
+            "description": "Donald Trump was barred from serving as director of a company in New York for three years."
+            },
+            {
+            "name": "Washington, DC",
+            "importance": 3,
+            "description": "Location of the Old Post Office, which sale Trump and his companies were found liable for fraudulent profits."
+            },
+            {
+            "name": "Bronx",
+            "importance": 3,
+            "description": "Location of Ferry Point, from which Trump and his companies were found liable for fraudulent profits."
+            }
+        ],
+        "dates": [
+            {
+            "date": "2023-04-14",
+            "description": "Judge Arthur Engoron fined Donald Trump $355 million for fraudulently inflating the values of his properties."
+            }
+        ],
+        "statistics": [
+            {
+            "name": "Total fine amount against Donald Trump",
+            "importance": 5,
+            "value": "$438 million",
+            "description": "Cumulative fines levied against Donald Trump over the past four weeks, including for fraud and defamation."
+            },
+            {
+            "name": "Disgorgement fines levied by Judge Engoron",
+            "importance": 5,
+            "value": "$355 million",
+            "description": "For fraud, conspiracy and issuing false financial statements and false business records."
+            },
+            {
+            "name": "Judgment issued against Trump for defamation",
+            "importance": 4,
+            "value": "$83 million",
+            "description": "Related to defamation of E. Jean Carroll."
+            },
+            {
+            "name": "Interest saved from fraud",
+            "importance": 4,
+            "value": "$168 million",
+            "description": "The amount Judge Engoron fined Trump and his companies for saving in interest due to fraud."
+            },
+            {
+            "name": "Profits from Old Post Office sale",
+            "importance": 4,
+            "value": "$126 million",
+            "description": "Ill-gotten profits from the sale deemed by the judge."
+            },
+            {
+            "name": "Profits from Ferry Point sale",
+            "importance": 3,
+            "value": "$60 million",
+            "description": "Deemed as fraudulent profits from the sale."
+            },
+            {
+            "name": "Potential additional interest on payments",
+            "importance": 3,
+            "value": "up to $100 million",
+            "description": "Amount that Donald Trump could be required to pay in interest on the disgorgement fines."
+            },
+            {
+            "name": "Disgorgement paid by Eric and Donald Trump Jr.",
+            "importance": 3,
+            "value": "over $4 million",
+            "description": "Profits they personally received from the sale of Trump's hotel at the Old Post Office building."
+            }
+        ],
+        "connections": null,
+        "quotes": [
+            {
+            "quote": "Their complete lack of contrition and remorse borders on pathological.",
+            "importance": 5,
+            "speaker": "Arthur Engoron",
+            "description": "Describing Donald Trump and his co-defendants in his ruling."
+            },
+            {
+            "quote": "Defendants did not commit murder or arson. They did not rob a bank at gunpoint. Donald Trump is not Bernard Madoff. Yet, defendants are incapable of admitting the error of their ways.",
+            "importance": 4,
+            "speaker": "Arthur Engoron",
+            "description": "Highlighting the nature of Trump's actions compared to other crimes and the defendants' lack of contrition."
+            },
+            {
+            "quote": "The Court found his testimony credible, based on the relaxed manner in which he testified, the general plausibility of his statements, and, most importantly, the way his testimony was corroborated by other trial evidence.",
+            "importance": 3,
+            "speaker": "Arthur Engoron",
+            "description": "On finding Michael Cohen's testimony credible."
+            },
+            {
+            "quote": "ignored the law, ignored the facts",
+            "importance": 2,
+            "speaker": "Christopher Kise",
+            "description": "Contesting Judge Engoron's ruling against Donald Trump."
+            },
+            {
+            "quote": "To err is human, to forgive is divine. Defendants apparently are of a different mind.",
+            "importance": 2,
+            "speaker": "Arthur Engoron",
+            "description": "Using a quote from Alexander Pope to characterize defendants' lack of contrition."
+            }
+        ],
+        "events": null,
+        "summary": "Judge Arthur Engoron fined Donald Trump $355 million for fraudulent activities concerning property values and barred him from directorship roles in New York for three years. This, combined with a prior $83 million defamation judgment related to E. Jean Carroll, sums up to roughly $438 million in fines over four weeks. The ruling addressed Trump's financial statement fraud, false business records, and conspiracy. Trump's sons Eric and Donald Jr. were also barred from executive roles for two years. Trump's attorney plans to appeal the decision, which could prolong the legal proceedings.",
+        "key_takeaways": null
+    },
+    "NRA trial: Deliberations begin in civil case against group and top officials": {
+        "people": [
+            {
+            "name": "Wayne LaPierre",
+            "importance": 5,
+            "role": "former CEO of the National Rifle Association",
+            "description": "Testified he wasn't in it for the money and his expenses were part of an effort to bolster the NRA's reach and importance, but is accused of mass corruption and personal expense misuse."
+            },
+            {
+            "name": "Wilson \\",
+            "importance": 1,
+            "role": null,
+            "description": null
+            }
+        ],
+        "organizations": [
+            {
+            "name": "National Rifle Association",
+            "importance": 5,
+            "description": "A powerful lobbying group on trial for civil corruption brought forth by its top executives.",
+            "people": null
+            },
+            {
+            "name": "MMP",
+            "importance": 2,
+            "description": "Former advertising firm of the NRA which had an increasing contract as Wayne LaPierre or his wife spent time on the yacht of the owners of Ackerman McQueen.",
+            "people": null
+            },
+            {
+            "name": "Ackerman McQueen",
+            "importance": 2,
+            "description": "An entity related to MMP whose owners' yacht was used by Wayne LaPierre and his wife.",
+            "people": null
+            }
+        ],
+        "locations": null,
+        "dates": [
+            {
+            "date": "2023-04-25",
+            "description": "The date when the jury will continue deliberations on the civil corruption trial against the National Rifle Association and its top executives."
+            }
+        ],
+        "statistics": [
+            {
+            "name": "Total NRA payment to MMP entities",
+            "importance": 4,
+            "value": "$109 million",
+            "description": "From 2015 through 2022, the NRA paid this amount to MMP entities, which the New York attorney general's office wants repaid in damages."
+            },
+            {
+            "name": "Private flights to the Bahamas for LaPierre",
+            "importance": 3,
+            "value": "$600,000",
+            "description": "The NRA paid this amount for private flights to the Bahamas for Wayne LaPierre."
+            },
+            {
+            "name": "Hair and makeup expenses for LaPierre",
+            "importance": 2,
+            "value": "approximately $41,000",
+            "description": "The cost of Wayne LaPierre's hair and makeup expenses, according to the New York attorney general's office."
+            }
+        ],
+        "connections": null,
+        "quotes": null,
+        "events": null,
+        "summary": "The jury in the civil corruption trial against the NRA and its top executives will continue deliberations on Tuesday. The New York attorney general's office accuses them of corruption and misusing funds. Wayne LaPierre, the former CEO, stepped down, denying financial motives and claiming expenses advanced the NRA's influence.",
+        "key_takeaways": [
+            "The jury will resume deliberation in the NRA's civil corruption trial on April 25.",
+            "Wayne LaPierre and other executives accused of mass corruption and misuse of NRA funds.",
+            "LaPierre denies wrongdoing, claims expenses were for bolstering NRA influence."
+        ]
+    },
+    "Caitlin Clark-onomics and the new era of profitability in college sports": {
+        "people": [
+            {
+            "name": "Caitlin Clark",
+            "importance": 5,
+            "role": "Iowa star",
+            "description": "women's college basketball's all-time leading scorer and an economic powerhouse"
+            },
+            {
+            "name": "Patrick Rishe",
+            "importance": 3,
+            "role": "director of the sports business program at Washington University in St. Louis",
+            "description": null
+            },
+            {
+            "name": "Sam Weber",
+            "importance": 3,
+            "role": "head of marketing and communications at Opendorse",
+            "description": null
+            },
+            {
+            "name": "Angel Reese",
+            "importance": 3,
+            "role": null,
+            "description": null
+            },
+            {
+            "name": "Flau'jae Johnson",
+            "importance": 3,
+            "role": null,
+            "description": null
+            },
+            {
+            "name": "Tiger Woods",
+            "importance": 2,
+            "role": "golfer",
+            "description": "has a 27-year relationship with Nike"
+            },
+            {
+            "name": "LeBron James",
+            "importance": 2,
+            "role": "basketball star",
+            "description": "signed a lifetime deal with Nike as a high school senior"
+            }
+        ],
+        "organizations": [
+            {
+            "name": "Gatorade",
+            "importance": 1,
+            "description": null,
+            "people": null
+            },
+            {
+            "name": "Nike",
+            "importance": 1,
+            "description": null,
+            "people": null
+            },
+            {
+            "name": "State Farm",
+            "importance": 1,
+            "description": null,
+            "people": null
+            },
+            {
+            "name": "On3",
+            "importance": 1,
+            "description": "Sports data site",
+            "people": null
+            },
+            {
+            "name": "WNBA",
+            "importance": 1,
+            "description": "women's professional basketball league in which top salary maxes out around $250,000",
+            "people": null
+            },
+            {
+            "name": "Iowa Hawkeyes women's basketball team",
+            "importance": 1,
+            "description": "college women's basketball team that sold out season tickets",
+            "people": null
+            },
+            {
+            "name": "TickPick",
+            "importance": 1,
+            "description": "estimates that Iowa's March 3 home game will be the most expensive in women's college basketball history",
+            "people": null
+            },
+            {
+            "name": "Fox Sports",
+            "importance": 1,
+            "description": "broadcasted the most-watched women's college basketball game ever",
+            "people": null
+            },
+            {
+            "name": "Opendorse",
+            "importance": 1,
+            "description": "an online platform that helps connect athletes with NIL deals",
+            "people": [
+                {
+                "name": "Sam Weber",
+                "importance": 5,
+                "role": null,
+                "description": null
+                }
+            ]
+            }
+        ],
+        "locations": [
+            {
+            "name": "Iowa",
+            "importance": 5,
+            "description": "location where Caitlin Clark plays, achieved historical milestones, and where ticket sales flourished"
+            }
+        ],
+        "dates": [
+            {
+            "date": "2023-03-03",
+            "description": "Iowa's home game against No. 2-ranked Ohio State with ticket prices topping $450"
+            },
+            {
+            "date": "2021",
+            "description": "Supreme Court ruling allowed student athletes to make money off their personal brand"
+            },
+            {
+            "date": "2024",
+            "description": "the total market for commercial NIL deals for college athletes is expected to reach an estimated $200 million"
+            }
+        ],
+        "statistics": [
+            {
+            "name": "Caitlin Clark's partnership value",
+            "importance": 5,
+            "value": "$818,000",
+            "description": "the fifth-highest ranking in all of women's college sports"
+            },
+            {
+            "name": "Top WNBA salary",
+            "importance": 4,
+            "value": "around $250,000",
+            "description": "the highest salary a WNBA player can currently expect to make"
+            },
+            {
+            "name": "On3's NIL ranking values",
+            "importance": 4,
+            "value": "above $1 million",
+            "description": "NIL valuations of LSU stars Angel Reese and Flau'jae Johnson"
+            },
+            {
+            "name": "Average WNBA salary in 2023",
+            "importance": 4,
+            "value": "around $113,000",
+            "description": "according to Spotrac"
+            },
+            {
+            "name": "Ticket prices",
+            "importance": 4,
+            "value": "averaging $400",
+            "description": "for a pivotal game in Iowa City against the Michigan Wolverines"
+            },
+            {
+            "name": "Cheapest seat price",
+            "importance": 3,
+            "value": "above $1,000",
+            "description": "maxing out for Iowa's March 3 home game against Ohio State"
+            },
+            {
+            "name": "Viewership",
+            "importance": 5,
+            "value": "1.7 million viewers",
+            "description": "for Nebraska's victory over Iowa, the most-watched women's college basketball game ever on Fox Sports"
+            }
+        ],
+        "connections": null,
+        "quotes": null,
+        "events": null,
+        "summary": "Caitlin Clark is recognized as women's college basketball's all-time leading scorer and has become an economic powerhouse in college sports with a multi-million dollar earning potential. She has endorsement deals with major brands, and her presence has substantially increased interest and revenue in women's college sports. The 2021 Supreme Court ruling on NIL (name, image, and likeness) has allowed college athletes to monetize their personal brand, leading to hitherto unprecedented levels of profitability for athletes, especially women, whose professional sports salaries are traditionally much lower than their male counterparts.",
+        "key_takeaways": [
+            "Caitlin Clark became women's college basketball's all-time leading scorer.",
+            "Clark's endorsement deals and stardom are increasing profitability in women's college sports.",
+            "A 2021 Supreme Court ruling on NIL has empowered college athletes to earn from their personal brand."
+        ]
+    },
+    "Gwen Stefani says she has to relearn No Doubt songs ahead of ‘amazing’ Coachella reunion": {
+        "people": [
+            {
+            "name": "Gwen Stefani",
+            "importance": 5,
+            "role": "singer",
+            "description": "Frontwoman for No Doubt and set to perform in the upcoming No Doubt reunion at Coachella."
+            },
+            {
+            "name": "Jimmy Kimmel",
+            "importance": 3,
+            "role": "host",
+            "description": "Host of 'Jimmy Kimmel Live' where Gwen Stefani discussed her preparation for the No Doubt reunion."
+            },
+            {
+            "name": "Tony Kanal",
+            "importance": 2,
+            "role": null,
+            "description": "Member of No Doubt, the band that Gwen Stefani fronted."
+            },
+            {
+            "name": "Tom Dumont",
+            "importance": 2,
+            "role": null,
+            "description": "Member of No Doubt, the band that Gwen Stefani fronted."
+            },
+            {
+            "name": "Adrian Young",
+            "importance": 2,
+            "role": null,
+            "description": "Member of No Doubt, the band that Gwen Stefani fronted."
+            },
+            {
+            "name": "Lana Del Rey",
+            "importance": 2,
+            "role": "singer",
+            "description": "One of the headliners set to perform at Coachella this year."
+            },
+            {
+            "name": "Doja Cat",
+            "importance": 2,
+            "role": "singer",
+            "description": "One of the headliners set to perform at Coachella this year."
+            },
+            {
+            "name": "Tyler, The Creator",
+            "importance": 2,
+            "role": "rapper",
+            "description": "One of the headliners set to perform at Coachella this year."
+            }
+        ],
+        "organizations": null,
+        "locations": [
+            {
+            "name": "Coachella",
+            "importance": 5,
+            "description": "Music festival where No Doubt will have a reunion performance and which other artists are set to headline."
+            },
+            {
+            "name": "Indio's Empire Polo Field",
+            "importance": 3,
+            "description": "The location for the Coachella music festival."
+            }
+        ],
+        "dates": [
+            {
+            "date": "2023-04-12",
+            "description": "The live music festival Coachella starts on this date for its first weekend."
+            },
+            {
+            "date": "2023-04-14",
+            "description": "End date for the first weekend of Coachella."
+            },
+            {
+            "date": "2023-04-19",
+            "description": "The live music festival Coachella starts on this date for its second weekend."
+            },
+            {
+            "date": "2023-04-21",
+            "description": "End date for the second weekend of Coachella."
+            }
+        ],
+        "statistics": null,
+        "connections": null,
+        "quotes": [
+            {
+            "quote": "I don't remember them... Not at all!",
+            "importance": 4,
+            "speaker": "Gwen Stefani",
+            "description": "Gwen Stefani's comment on needing to relearn No Doubt's songs for the Coachella performance."
+            },
+            {
+            "quote": "I'm so excited.",
+            "importance": 3,
+            "speaker": "Gwen Stefani",
+            "description": "Gwen Stefani's expression of excitement about playing at Coachella."
+            }
+        ],
+        "events": [
+            {
+            "title": "No Doubt Reunion at Coachella",
+            "importance": 5,
+            "description": "Frontwoman Gwen Stefani admits she needs to refresh on the band's classic songs ahead of their reunion performance.",
+            "date": "2023-04",
+            "time": null,
+            "location": null,
+            "participants": [
+                {
+                "name": "No Doubt",
+                "importance": 5,
+                "role": null,
+                "description": null
+                }
+            ]
+            }
+        ],
+        "summary": "Gwen Stefani acknowledges the need to relearn No Doubt's classic songs before their Coachella reunion. She discussed her preparations on 'Jimmy Kimmel Live,' joking about potential lyrical lapses.",
+        "key_takeaways": [
+            "Gwen Stefani is relearning No Doubt songs for the Coachella reunion.",
+            "No Doubt's last performance was nearly a decade ago.",
+            "Coachella 2023 features several other top artists."
+        ]
+    }
+}

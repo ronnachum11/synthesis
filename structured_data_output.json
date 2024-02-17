@@ -1,0 +1,112 @@
+{
+    "Takeaways from the $355 million civil fraud ruling against Donald Trump": {
+        "title": "Takeaways from the $355 million civil fraud ruling against Donald Trump",
+        "summary": "Judge Arthur Engoron fined Donald Trump $355 million for fraudulently inflating property values, adding to the $83 million defamation fine. The ruling signifies the ongoing civil challenges faced by Trump. Engoron found Trump liable for fraud, conspiracy, and false financial statements, restricting him from serving as a director in NY for 3 years. The judgment also includes fines for profits from property sales, totaling around $438 million in penalties over four weeks.",
+        "key_takeaways": [
+            "Judge Arthur Engoron fined Donald Trump $355 million for fraudulently inflating property values.",
+            "Trump fined $438 million in total over four weeks.",
+            "Engoron's ruling signifies the significant civil challenges faced by Trump."
+        ],
+        "importants": {
+            "Donald Trump": {
+                "name": "Donald Trump",
+                "importance": 5,
+                "role": null,
+                "description": "Former President of the United States"
+            },
+            "Trump Organization": {
+                "name": "Trump Organization",
+                "importance": 4,
+                "description": "Trump's business empire",
+                "people": null
+            }
+        },
+        "location": {},
+        "bias": "BIAS"
+    },
+    "NRA trial: Deliberations begin in civil case against group and top officials": {
+        "title": "NRA trial: Deliberations begin in civil case against group and top officials",
+        "summary": "The civil corruption trial against the National Rifle Association and its top executives is ongoing, with allegations of mass corruption and misuse of funds for personal expenses.",
+        "key_takeaways": [
+            "The civil corruption trial against the NRA and its executives continues with allegations of misconduct and misuse of funds.",
+            "The trial highlights the NRA's spending on private planes, luxury hotels, and other personal expenses."
+        ],
+        "importants": {},
+        "location": {},
+        "bias": "BIAS"
+    },
+    "Missouri has some of the weakest gun laws in the US. Here\u2019s how that is impacting the Kansas City shooting investigation": {
+        "title": "Missouri has some of the weakest gun laws in the US. Here\u2019s how that is impacting the Kansas City shooting investigation",
+        "summary": "A mass shooting occurred in Kansas City, following a Chiefs parade, raising concerns about lax gun laws in the state that have led to challenges in crime prevention and investigation.",
+        "key_takeaways": [
+            "Deadly mass shooting in Kansas City during Chiefs parade",
+            "Calls for stricter gun safety laws from Biden administration",
+            "Missouri's weak gun laws hinder crime prevention and investigation"
+        ],
+        "importants": {
+            "Joe Biden": {
+                "name": "Joe Biden",
+                "importance": 5,
+                "role": "President",
+                "description": null
+            }
+        },
+        "location": {
+            "Kansas City": {
+                "name": "Kansas City",
+                "importance": 5,
+                "description": "Site of the deadly mass shooting during Chiefs parade"
+            }
+        },
+        "bias": "BIAS"
+    },
+    "Caitlin Clark-onomics and the new era of profitability in college sports": {
+        "title": "Caitlin Clark-onomics and the new era of profitability in college sports",
+        "summary": "Caitlin Clark, the all-time leading scorer in women's college basketball, is setting new standards in athlete earnings and marketing power through endorsement deals and NIL agreements. The Supreme Court ruling in 2021 paved the way for college athletes to profit from their personal brand, highlighting women's sports' financial potential and boosting overall interest in collegiate and professional women's sports.",
+        "key_takeaways": [
+            "Caitlin Clark is the all-time leading scorer in women's college basketball, showcasing the growing financial opportunities for athletes through endorsement deals and NIL agreements.",
+            "The 2021 Supreme Court ruling allowing college athletes to profit from their personal brand has significantly impacted women's sports, leading to increased revenue, brand recognition, and interest in collegiate and professional women's sports."
+        ],
+        "importants": {},
+        "location": {},
+        "bias": "BIAS"
+    },
+    "Gwen Stefani says she has to relearn No Doubt songs ahead of \u2018amazing\u2019 Coachella reunion": {
+        "title": "Gwen Stefani says she has to relearn No Doubt songs ahead of \u2018amazing\u2019 Coachella reunion",
+        "summary": "Gwen Stefani prepares for the No Doubt reunion at the Coachella music festival in April, needing to relearn classic songs. The band last performed together almost ten years ago, with plans for a setlist including hits like \\",
+        "key_takeaways": [
+            "Gwen Stefani needs to relearn \\",
+            "No Doubt is reuniting for Coachella after almost ten years, planning to perform classic hits like \\",
+            "Coachella music festival features headliners Lana Del Rey, Doja Cat, and Tyler, The Creator"
+        ],
+        "importants": {
+            "Gwen Stefani": {
+                "name": "Gwen Stefani",
+                "importance": 5,
+                "role": "Frontwoman for No Doubt",
+                "description": null
+            },
+            "No Doubt": {
+                "name": "No Doubt",
+                "importance": 4,
+                "description": "Ska-punk band known for hits like \\",
+                "people": [
+                    {
+                        "name": "Gwen Stefani",
+                        "importance": 5,
+                        "role": null,
+                        "description": "Frontwoman for No Doubt"
+                    }
+                ]
+            },
+            "Coachella": {
+                "name": "Coachella",
+                "importance": 5,
+                "description": "Music festival where No Doubt reunion will take place",
+                "people": null
+            }
+        },
+        "location": {},
+        "bias": "BIAS"
+    }
+}
