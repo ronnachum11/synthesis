@@ -7,12 +7,30 @@ import concurrent.futures
 from pinecone import Pinecone, PodSpec
 from gpt4all import Embed4All
 from dotenv import load_dotenv
+from supabase import create_client, Client
 import os
 import json
 import uuid
 import datetime
+from collections import defaultdict
 
 load_dotenv()
+
+class UnionFind:
+    def __init__(self, articles_data):
+        self.root = {article["id"]: article["id"] for article in articles_data}
+
+    def find(self, x):
+        if x == self.root[x]:
+            return x
+        self.root[x] = self.find(self.root[x])
+        return self.root[x]
+
+    def union(self, x, y):
+        rootX = self.find(x)
+        rootY = self.find(y)
+        if rootX != rootY:
+            self.root[rootY] = rootX
 
 
 class Scraper:
@@ -22,14 +40,12 @@ class Scraper:
         self.embedder = Embed4All()
 
     def get_categories(self, websites):
-        built_sites = list(
-            map(
+        built_sites = map(
                 lambda website: n3k.build(
                     website, language="en", memoize_articles=True
                 ),
                 websites,
             )
-        )
         categories = []
         for site in built_sites:
             categories += site.category_urls()
@@ -91,37 +107,24 @@ class Scraper:
                 "brand": brand,
                 "url": url,
             }
-            if " ad " in a.text or " advertisement " in a.text:
+            if not a.text or " ad " in a.text or " advertisement " in a.text or len(a.text) < 250:
                 advertisements.append(out)
             else:
                 usable_data.append(out)
             if (i + 1) % 100 == 0 or i == len(articles) - 1:
                 print(f"Processed {i}/{len(articles)} articles")
                 return usable_data
-                # udf = pd.DataFrame(usable_data)
-                # adf = pd.DataFrame(advertisements)
-                # udf.to_json("articles.json", orient="records")
-                # adf.to_json("advertisements.json", orient="records")
 
     def main(self):
-        websites = n3k.popular_urls()
+        # Get websites
+        with open("websites.txt", "r") as f:
+            websites = list(map(lambda x: x.strip(), f.readlines()))
 
         def get_brand(website):
             return [website, n3k.build(website, language="en").brand]
 
         with concurrent.futures.ThreadPoolExecutor() as executor:
-            results = []
-            proc = 0
-            l = len(websites)
-            for result in executor.map(get_brand, websites):
-                proc += 1
-                print(f"Processed {proc}/{l} URLs")
-                results.append(result)
-
-        # with open("websites.txt", "r") as f:
-        #     websites = list(map(lambda x: ast.literal_eval(x), f.readlines()))
-
-        websites = results
+            websites = list(executor.map(get_brand, websites))
 
         urls = []
         while len(urls) == 0:
@@ -180,7 +183,163 @@ class Scraper:
                     print(f"Upserting {i}/{len(data['articles'])}")
                     index.upsert(vectors=vectors)
                     vectors = []
+                    
                     if self.ONE_TIME_RUN:
                         v = {"vectors": local_vectors}
                         with open("local_vectors.json", "w") as f:
                             json.dump(v, f)
+
+        # Similarity search
+        threshold = 0.75
+
+        if self.ONE_TIME_RUN:
+            with open("local_vectors.json") as f:
+                articles_data = json.load(f)["vectors"]
+                # article_texts = [article["article_text"] for article in articles_data]
+                index = self.pc.Index("news-articles")
+
+                uf = UnionFind(articles_data)
+
+                for i, article in enumerate(articles_data):
+                    if i % 100 == 0:
+                        print(f"Querying {i}/{len(articles_data)}")
+                    data = index.query(vector=article["values"], top_k=20)
+
+                    # print(data)
+
+                    filtered = [
+                        match["id"]
+                        for match in data["matches"]
+                        if match["score"] > threshold
+                        and match["id"] != article["id"]
+                        # and match["id"] in map(lambda x: x["id"], articles_data)
+                    ]
+                    for m_id in filtered:
+                        # print("Union", article["id"], m_id)
+                        uf.union(article["id"], m_id)
+
+                grouped_articles = defaultdict(list)
+                for ad in articles_data:
+                    root = uf.find(ad["id"])
+                    grouped_articles[root].append(ad["id"])
+
+                mappings = {article["id"]: article for article in articles_data}
+
+                for value in sorted(grouped_articles.values(), key=len, reverse=True):
+                    print([mappings[val]["title"] for val in value], "\n\n")
+
+                # ---------
+                url = os.environ.get("SUPABASE_URL")
+                key = os.environ.get("SUPABASE_KEY")
+                supabase = create_client(url, key)
+
+                for cluster_of_articles in grouped_articles.values():
+                    row_id = str(uuid.uuid4())
+                    data, _ = supabase.table("clusters").insert({"id": row_id}).execute()
+
+                    for article_id in cluster_of_articles:
+                        article = mappings[article_id]
+                        supabase.table("articles").insert(
+                            {
+                                "id": article_id,
+                                "cluster_id": row_id,
+                                "text": article["text"],
+                                "title": article["title"],
+                                "authors": article["authors"],
+                                "publish_date": datetime.now().isoformat(),
+                                "top_image": article["top_image"],
+                                "images": (article["images"] or [])[:5],
+                                "movies": (article["movies"] or [])[:5],
+                                "keywords": article["keywords"],
+                                "summary": article["summary"],
+                                "publisher": article["brand"],
+                            }
+                        ).execute()
+        # ----------
+
+        else:
+            embedder = Embed4All()
+            vectors = []
+
+            with self.pc.Index("news-articles", pool_threads=30) as index:
+                for i, row in enumerate(articles_data):
+                    if i % 10 == 0:
+                        print(f"Embedding {i}/{len(articles_data)}", len(row["text"]))
+
+                    if "text" not in row or not row["text"]:
+                        continue
+
+                    new_id = str(uuid.uuid4())
+                    values = embedder.embed(row["text"])
+                    vec = {"id": new_id, "values": values}
+                    row["id"] = new_id
+                    row["values"] = values
+
+                    vectors.append(vec)
+
+                    if i % 100 == 0 or i == len(articles_data) - 1:
+                        print(f"Upserting {i}/{len(articles_data)}")
+                        index.upsert(vectors=vectors)
+
+                # article_texts = [article["article_text"] for article in articles_data]
+                url = os.environ.get("SUPABASE_URL")
+                key = os.environ.get("SUPABASE_KEY")
+                supabase = create_client(url, key)
+                for i, article in enumerate(articles_data):
+                    if i % 100 == 0:
+                        print(f"Querying {i}/{len(articles_data)}")
+                    data = index.query(vector=article["values"], top_k=20)
+
+                    # print(data)
+
+                    filtered = [
+                        match["id"]
+                        for match in data["matches"]
+                        if match["score"] > threshold
+                        and match["id"] != article["id"]
+                        # and match["id"] in map(lambda x: x["id"], articles_data)
+                    ]
+
+                    if len(filtered) == 0:
+                        row_id = uuid.uuid4()
+                        data, _ = (
+                            supabase.table("clusters").insert({"id": row_id}).execute()
+                        )
+                    else:
+                        old_cluster_ids = [
+                            supabase.table("articles")
+                            .select("cluster_id")
+                            .eq("id", f)
+                            .execute()
+                            for f in filtered
+                        ]
+                        row_id = old_cluster_ids[0]
+                        for old in old_cluster_ids[1:]:
+                            supabase.table("articles").update({"cluster_id": row_id}).eq("cluster_id", old).execute()
+
+
+                    supabase.table("articles").insert(
+                        {
+                            "id": article["id"],
+                            "cluster_id": row_id,
+                            "text": article["text"],
+                            "title": article["title"],
+                            "authors": article["authors"],
+                            "publish_date": datetime.now().isoformat(),
+                            "top_image": article["top_image"],
+                            "images": (article["images"] or [])[:5],
+                            "movies": (article["movies"] or [])[:5],
+                            "keywords": article["keywords"],
+                            "summary": article["summary"],
+                            "publisher": article["brand"],
+                        }
+                    ).execute()
+
+                # grouped_articles = defaultdict(list)
+                # for ad in articles_data:
+                #     root = uf.find(ad["id"])
+                #     grouped_articles[root].append(ad["id"])
+
+                # for cluster_root_id, articles_in_cluster in grouped_articles.items():
+                #     print("Cluster {}: {}".format(cluster_root_id, articles_in_cluster))
+            

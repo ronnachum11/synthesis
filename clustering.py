@@ -52,7 +52,7 @@ def get_clusters(articles_data=None):
 
     if ONE_TIME_RUN:
         with open("local_vectors.json") as f:
-            articles_data = json.load(f)["vectors"][:1000]
+            articles_data = json.load(f)["vectors"][:5000]
             # article_texts = [article["article_text"] for article in articles_data]
             index = pc.Index("news-articles")
 
@@ -163,13 +163,6 @@ def get_clusters(articles_data=None):
                     data, _ = (
                         supabase.table("clusters").insert({"id": row_id}).execute()
                     )
-                elif len(filtered) == 1:
-                    row_id = (
-                        supabase.table("articles")
-                        .select("cluster_id")
-                        .eq("id", filtered[0])
-                        .execute()
-                    )
                 else:
                     old_cluster_ids = [
                         supabase.table("articles")
@@ -178,6 +171,9 @@ def get_clusters(articles_data=None):
                         .execute()
                         for f in filtered
                     ]
+                    row_id = old_cluster_ids[0]
+                    for old in old_cluster_ids[1:]:
+                        supabase.table("articles").update({"cluster_id": row_id}).eq("cluster_id", old).execute()
 
                 supabase.table("articles").insert(
                     {
