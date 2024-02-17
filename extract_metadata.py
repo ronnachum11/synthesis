@@ -130,7 +130,7 @@ with open('articles_data.json', 'r') as file:
 structured_data = {}
 
 for article in articles_data[3:8]:
-    print(f"{article['title']}: {article['summary'][:100]}...")
+    print(f"{article['title']}")
 
     try:
         article_info = client.chat.completions.create(

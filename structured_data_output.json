@@ -1,47 +1,46 @@
 {
     "Takeaways from the $355 million civil fraud ruling against Donald Trump": {
         "title": "Takeaways from the $355 million civil fraud ruling against Donald Trump",
-        "summary": "Judge Arthur Engoron fined Donald Trump $355 million for fraudulently inflating property values, adding to the $83 million defamation fine. The ruling signifies the ongoing civil challenges faced by Trump. Engoron found Trump liable for fraud, conspiracy, and false financial statements, restricting him from serving as a director in NY for 3 years. The judgment also includes fines for profits from property sales, totaling around $438 million in penalties over four weeks.",
+        "summary": "Judge Arthur Engoron fined Donald Trump $355 million for fraudulently inflating his properties, in addition to a $83 million judgment for defaming E. Jean Carroll. Total fines amount to $438 million over four weeks. Engoron found Trump liable for fraud and issued a ban on serving as director of a company in New York.",
         "key_takeaways": [
-            "Judge Arthur Engoron fined Donald Trump $355 million for fraudulently inflating property values.",
-            "Trump fined $438 million in total over four weeks.",
-            "Engoron's ruling signifies the significant civil challenges faced by Trump."
+            "Judge Arthur Engoron fined Donald Trump $438 million for fraudulently inflating property values over four weeks.",
+            "Engoron's ruling holds Trump liable for fraud, conspiracy, issuing false financial statements, and false business records, with a ban on serving as a company director in New York.",
+            "Trump's adult sons are banned from serving as executives in New York for two years, facing penalties for issuing false financial statements, falsifying business records, and conspiracy claims."
+        ],
+        "importants": {},
+        "location": {},
+        "bias": "BIAS"
+    },
+    "NRA trial: Deliberations begin in civil case against group and top officials": {
+        "title": "NRA trial: Deliberations begin in civil case against group and top officials",
+        "summary": "The National Rifle Association and its top executives face a civil corruption trial in New York, with allegations of mass corruption and misuse of funds for personal expenses.",
+        "key_takeaways": [
+            "Jury to continue deliberations on Tuesday in the civil corruption trial against the NRA and its top executives.",
+            "The case highlights alleged misuse of NRA funds for private expenses by top executives."
         ],
         "importants": {
-            "Donald Trump": {
-                "name": "Donald Trump",
+            "Wayne LaPierre": {
+                "name": "Wayne LaPierre",
                 "importance": 5,
-                "role": null,
-                "description": "Former President of the United States"
+                "role": "Former CEO",
+                "description": "Central figure in the NRA corruption trial, accused of engaging in mass corruption by spending organization's money on personal expenses."
             },
-            "Trump Organization": {
-                "name": "Trump Organization",
-                "importance": 4,
-                "description": "Trump's business empire",
+            "National Rifle Association (NRA)": {
+                "name": "National Rifle Association (NRA)",
+                "importance": 5,
+                "description": "One of the most powerful lobbying groups in the U.S., facing allegations of corruption and misuse of funds for personal expenses.",
                 "people": null
             }
         },
         "location": {},
         "bias": "BIAS"
     },
-    "NRA trial: Deliberations begin in civil case against group and top officials": {
-        "title": "NRA trial: Deliberations begin in civil case against group and top officials",
-        "summary": "The civil corruption trial against the National Rifle Association and its top executives is ongoing, with allegations of mass corruption and misuse of funds for personal expenses.",
-        "key_takeaways": [
-            "The civil corruption trial against the NRA and its executives continues with allegations of misconduct and misuse of funds.",
-            "The trial highlights the NRA's spending on private planes, luxury hotels, and other personal expenses."
-        ],
-        "importants": {},
-        "location": {},
-        "bias": "BIAS"
-    },
     "Missouri has some of the weakest gun laws in the US. Here\u2019s how that is impacting the Kansas City shooting investigation": {
         "title": "Missouri has some of the weakest gun laws in the US. Here\u2019s how that is impacting the Kansas City shooting investigation",
-        "summary": "A mass shooting occurred in Kansas City, following a Chiefs parade, raising concerns about lax gun laws in the state that have led to challenges in crime prevention and investigation.",
+        "summary": "A deadly mass shooting occurred in Kansas City after a Super Bowl celebration rally, highlighting the state's weak gun laws.",
         "key_takeaways": [
-            "Deadly mass shooting in Kansas City during Chiefs parade",
-            "Calls for stricter gun safety laws from Biden administration",
-            "Missouri's weak gun laws hinder crime prevention and investigation"
+            "A mass shooting in Kansas City resulted in one death and 23 injuries.",
+            "Missouri's lax gun laws have created challenges for law enforcement in preventing and investigating gun violence."
         ],
         "importants": {
             "Joe Biden": {
@@ -55,17 +54,18 @@
             "Kansas City": {
                 "name": "Kansas City",
                 "importance": 5,
-                "description": "Site of the deadly mass shooting during Chiefs parade"
+                "description": "Location of the mass shooting and a city with weak gun laws"
             }
         },
         "bias": "BIAS"
     },
     "Caitlin Clark-onomics and the new era of profitability in college sports": {
         "title": "Caitlin Clark-onomics and the new era of profitability in college sports",
-        "summary": "Caitlin Clark, the all-time leading scorer in women's college basketball, is setting new standards in athlete earnings and marketing power through endorsement deals and NIL agreements. The Supreme Court ruling in 2021 paved the way for college athletes to profit from their personal brand, highlighting women's sports' financial potential and boosting overall interest in collegiate and professional women's sports.",
+        "summary": "Caitlin Clark makes history as the all-time leading scorer in women's college basketball and is a significant economic powerhouse with lucrative sponsorship deals. Her success highlights the increasing earning potential for college athletes, especially women, in the changing landscape of college sports profitability.",
         "key_takeaways": [
-            "Caitlin Clark is the all-time leading scorer in women's college basketball, showcasing the growing financial opportunities for athletes through endorsement deals and NIL agreements.",
-            "The 2021 Supreme Court ruling allowing college athletes to profit from their personal brand has significantly impacted women's sports, leading to increased revenue, brand recognition, and interest in collegiate and professional women's sports."
+            "Caitlin Clark becomes the all-time leading scorer in women's college basketball.",
+            "Sponsorship deals for college athletes, particularly women, showcase the significant earning potential in college sports.",
+            "The evolving NIL rules empower female athletes to capitalize on their personal brands and create long-term economic opportunities."
         ],
         "importants": {},
         "location": {},
@@ -73,11 +73,10 @@
     },
     "Gwen Stefani says she has to relearn No Doubt songs ahead of \u2018amazing\u2019 Coachella reunion": {
         "title": "Gwen Stefani says she has to relearn No Doubt songs ahead of \u2018amazing\u2019 Coachella reunion",
-        "summary": "Gwen Stefani prepares for the No Doubt reunion at the Coachella music festival in April, needing to relearn classic songs. The band last performed together almost ten years ago, with plans for a setlist including hits like \\",
+        "summary": "Gwen Stefani prepares for the No Doubt reunion at Coachella, admitting she needs to relearn their songs. The band last performed together almost ten years ago, with plans to rehearse for the festival.",
         "key_takeaways": [
-            "Gwen Stefani needs to relearn \\",
-            "No Doubt is reuniting for Coachella after almost ten years, planning to perform classic hits like \\",
-            "Coachella music festival features headliners Lana Del Rey, Doja Cat, and Tyler, The Creator"
+            "Gwen Stefani is relearning No Doubt songs for the Coachella reunion.",
+            "Stefani jokes about needing help from fans if she forgets lyrics."
         ],
         "importants": {
             "Gwen Stefani": {
@@ -88,21 +87,14 @@
             },
             "No Doubt": {
                 "name": "No Doubt",
-                "importance": 4,
-                "description": "Ska-punk band known for hits like \\",
-                "people": [
-                    {
-                        "name": "Gwen Stefani",
-                        "importance": 5,
-                        "role": null,
-                        "description": "Frontwoman for No Doubt"
-                    }
-                ]
+                "importance": 5,
+                "description": "Iconic ska-punk band with a solid string of hits in the mid-90s to the new millennium.",
+                "people": null
             },
             "Coachella": {
                 "name": "Coachella",
-                "importance": 5,
-                "description": "Music festival where No Doubt reunion will take place",
+                "importance": 4,
+                "description": "Annual music festival where Gwen Stefani and No Doubt are set to reunite.",
                 "people": null
             }
         },
