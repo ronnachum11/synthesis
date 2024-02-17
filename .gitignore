@@ -1,2 +1,6 @@
 venv/
 .env
+local_vectors.json
+local_vectors1.json
+advertisement.json
+articles.json

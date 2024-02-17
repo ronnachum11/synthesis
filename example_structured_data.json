@@ -1,0 +1,858 @@
+{
+    "Takeaways from the $355 million civil fraud ruling against Donald Trump: CNN": {
+        "people": [
+        {
+            "name": "Arthur Engoron",
+            "importance": 5,
+            "role": "Judge",
+            "description": "Judge Arthur Engoron hit Donald Trump with his biggest punishment to date on Friday, in a ruling that fined the former president $355 million for fraudulently inflating the values of his properties."
+        },
+        {
+            "name": "Donald Trump",
+            "importance": 5,
+            "role": "former president",
+            "description": "Donald Trump was fined roughly $438 million over the past four weeks, comprising of a $355 million fine for fraudulently inflating the values of his properties and an $83 million judgment for defaming E. Jean Carroll."
+        },
+        {
+            "name": "E. Jean Carroll",
+            "importance": 3,
+            "role": null,
+            "description": null
+        },
+        {
+            "name": "Letitia James",
+            "importance": 3,
+            "role": "New York Attorney General",
+            "description": "New York Attorney General Letitia James had asked Engoron to fine Trump and other defendants $370 million, accusing them of engaging in a long-running fraud scheme of inflating Trump's assets on his financial statements."
+        },
+        {
+            "name": "Michael Cohen",
+            "importance": 4,
+            "role": "Trump's former lawyer and fixer",
+            "description": "Michael Cohen's trial testimony was acknowledged by Engoron, who ultimately found him credible despite credibility issues."
+        },
+        {
+            "name": "Allen Weisselberg",
+            "importance": 2,
+            "role": null,
+            "description": null
+        },
+        {
+            "name": "Jeff McConney",
+            "importance": 2,
+            "role": null,
+            "description": null
+        },
+        {
+            "name": "Eric Trump",
+            "importance": 4,
+            "role": null,
+            "description": null
+        },
+        {
+            "name": "Donald Trump Jr.",
+            "importance": 4,
+            "role": null,
+            "description": null
+        },
+        {
+            "name": "Ivanka Trump",
+            "importance": 3,
+            "role": null,
+            "description": null
+        },
+        {
+            "name": "Christopher Kise",
+            "importance": 2,
+            "role": "Trump's attorney",
+            "description": "Trump attorney Christopher Kise responded to Engoron's ruling stating that the court \"ignored the law, ignored the facts.\""
+        }
+        ],
+        "organizations": [
+        {
+            "name": "Trump Organization",
+            "importance": 5,
+            "description": "Judge Arthur Engoron ruled in favor of the fines without dissolving the Trump Organization but barred Trump from serving as director of a company in New York for three years.",
+            "people": null
+        }
+        ],
+        "locations": [
+        {
+            "name": "New York",
+            "importance": 5,
+            "description": "The location where Donald Trump was barred from serving as director of a company for three years following a fraud ruling."
+        },
+        {
+            "name": "Washington, DC",
+            "importance": 3,
+            "description": "Engoron ruled that Trump and his companies were liable for $126 million in ill-gotten profits from the sale of the Old Post Office in Washington, DC."
+        },
+        {
+            "name": "Bronx",
+            "importance": 3,
+            "description": "Engoron ruled that Trump and his companies were liable for $60 million in profits from the sale of Ferry Point in the Bronx."
+        }
+        ],
+        "dates": [
+        {
+            "date": "2023-05-05",
+            "description": "Judge Arthur Engoron fined Donald Trump $355 million for fraudulently inflating the values of his properties."
+        }
+        ],
+        "statistics": [
+        {
+            "name": "Fine amount against Trump and his company",
+            "importance": 5,
+            "value": "$438 million",
+            "description": "Total fines levied against Donald Trump and his company over the past four weeks, including $355 million for fraudulently inflating property values and $83 million for defamation."
+        },
+        {
+            "name": "Disgorgement amount fined by Engoron",
+            "importance": 5,
+            "value": "$355 million",
+            "description": "Judge Arthur Engoron fined Donald Trump $355 million in disgorgement, representing the return of ill-gotten gains for inflating the values of his properties."
+        },
+        {
+            "name": "Interest saved by fraud",
+            "importance": 4,
+            "value": "$168 million",
+            "description": "Engoron found that the defendants' fraud saved them about $168 million in interest."
+        },
+        {
+            "name": "Ill-gotten profits from the sale of the Old Post Office",
+            "importance": 4,
+            "value": "$126 million",
+            "description": "The judge ruled that Trump and his companies were liable for $126 million in ill-gotten profits from the sale of the Old Post Office in Washington, DC."
+        },
+        {
+            "name": "Ill-gotten profits from the sale of Ferry Point",
+            "importance": 4,
+            "value": "$60 million",
+            "description": "The judge ruled that Trump and his companies were liable for $60 million in profits from the sale of Ferry Point in the Bronx."
+        }
+        ],
+        "connections": [
+        {
+            "person1": "Donald Trump",
+            "person2": "E. Jean Carroll",
+            "description": "Donald Trump faced an $83 million judgment for defaming E. Jean Carroll, in addition to a $355 million fine for property value inflation."
+        },
+        {
+            "person1": "Donald Trump",
+            "person2": "Letitia James",
+            "description": "New York Attorney General Letitia James brought forth the case against Donald Trump, accusing him of a fraud scheme."
+        },
+        {
+            "person1": "Donald Trump",
+            "person2": "Michael Cohen",
+            "description": "Engoron acknowledged Michael Cohen's theatrical trial testimony against Donald Trump and ultimately found him credible."
+        }
+        ],
+        "quotes": [
+        {
+            "quote": "Their complete lack of contrition and remorse borders on pathological.",
+            "importance": 5,
+            "speaker": "Arthur Engoron",
+            "description": "Judge Arthur Engoron's remark on Trump and his co-defendants' lack of remorse in his ruling."
+        },
+        {
+            "quote": "The Court found his testimony credible, based on the relaxed manner in which he testified, the general plausibility of his statements, and, most importantly, the way his testimony was corroborated by other trial evidence.",
+            "importance": 5,
+            "speaker": "Arthur Engoron",
+            "description": "Judge Arthur Engoron on Michael Cohen's credibility as a witness against Donald Trump."
+        },
+        {
+            "quote": "The court ignored the law, ignored the facts.",
+            "importance": 4,
+            "speaker": "Christopher Kise",
+            "description": "Trump attorney Christopher Kise's statement in response to Engoron's ruling."
+        }
+        ],
+        "events": [
+        {
+            "title": "Ruling against Donald Trump",
+            "importance": 5,
+            "description": "Judge Arthur Engoron fined Donald Trump $355 million for fraudulent property value inflation, which is part of the total fines of $438 million levied against him over the past four weeks.",
+            "date": "2023-05-05",
+            "time": null,
+            "location": null,
+            "participants": null
+        }
+        ]
+    },
+
+    "NRA trial: Deliberations begin in civil case against group and top officials": {
+        "people": [
+        {
+            "name": "Wayne LaPierre",
+            "importance": 5,
+            "role": "Former CEO of the National Rifle Association",
+            "description": "Testified he wasn't in it for the money and defended the expenses as an effort to bolster the NRA's reach and importance."
+        },
+        {
+            "name": "Wilson \"Woody\" Philips",
+            "importance": 4,
+            "role": "Former CFO of the National Rifle Association",
+            "description": "Defendant in the NRA's civil corruption trial along with LaPierre and others."
+        },
+        {
+            "name": "John Frazer",
+            "importance": 4,
+            "role": "General counsel of the National Rifle Association",
+            "description": "Accused alongside LaPierre and Philips of misadministrating charitable money and violating non-profit laws."
+        },
+        {
+            "name": "Monica Connell",
+            "importance": 4,
+            "role": "Assistant Attorney General",
+            "description": "Argued in closing arguments that the NRA executives engaged in corruption and should pay back millions to the organization."
+        },
+        {
+            "name": "Oliver North",
+            "importance": 3,
+            "role": "Former NRA president",
+            "description": "Testified earlier for the state; his hiring and dismissal by LaPierre used as an example of alleged corruption."
+        },
+        {
+            "name": "Kent Correll",
+            "importance": 3,
+            "role": "Attorney for Wayne LaPierre",
+            "description": "Defended LaPierre during closing arguments, saying he wasn't interested in building a pile of money for himself."
+        },
+        {
+            "name": "Letitia James",
+            "importance": 4,
+            "role": "New York Attorney General",
+            "description": "Her office is asking the jury to find against LaPierre and others, for the reimbursement and penalties to the NRA."
+        },
+        {
+            "name": "Sarah Rodgers",
+            "importance": 3,
+            "role": "NRA Attorney",
+            "description": "Stated that the misconduct was concealed from the NRA, and damages are payable to the organization, not the state."
+        }
+        ],
+        "organizations": [
+        {
+            "name": "National Rifle Association",
+            "importance": 5,
+            "description": "Accused of mass corruption in a civil trial; executives allegedly spent millions on personal expenses.",
+            "people": [
+            {
+                "name": "Wayne LaPierre",
+                "importance": 5,
+                "role": null,
+                "description": null
+            },
+            {
+                "name": "Wilson \"Woody\" Philips",
+                "importance": 4,
+                "role": null,
+                "description": null
+            },
+            {
+                "name": "John Frazer",
+                "importance": 4,
+                "role": null,
+                "description": null
+            }
+            ]
+        }
+        ],
+        "locations": [
+        {
+            "name": "New York",
+            "importance": 3,
+            "description": "Location where the New York attorney general's office is seeking reimbursement for the NRA."
+        },
+        {
+            "name": "Bahamas",
+            "importance": 2,
+            "description": "Destination where LaPierre took private flights that are part of the claims of corruption."
+        }
+        ],
+        "dates": [
+        {
+            "date": "2023-04-14",
+            "description": "Jury began deliberations in the civil corruption trial against the National Rifle Association and its executives."
+        },
+        {
+            "date": "2023-04-18",
+            "description": "Court to resume including jury deliberations after the recess for the weekend and the Monday public holiday."
+        }
+        ],
+        "statistics": [
+        {
+            "name": "Total payment to MMP entities by NRA",
+            "importance": 4,
+            "value": "$109 million",
+            "description": "Amount paid from 2015 to 2022, which the prosecution suggests should be reimbursed in damages."
+        }
+        ],
+        "connections": null,
+        "quotes": null,
+        "events": [
+        {
+            "title": "Civil Corruption Trial Against NRA Executives",
+            "importance": 5,
+            "description": "A trial spotlighting alleged corruption by top executives at the NRA, who are accused of using organization funds for personal expenses.",
+            "date": "2023-04-14",
+            "time": null,
+            "location": null,
+            "participants": null
+        }
+        ]
+    },
+    "Missouri has some of the weakest gun laws in the US. Here’s how that is impacting the Kansas City shooting investigation": {
+        "people": [
+        {
+            "name": "Joe Biden",
+            "importance": 5,
+            "role": "President",
+            "description": "Prompted calls from the administration for Congress to pass reasonable gun safety laws."
+        },
+        {
+            "name": "Jennifer Mascia",
+            "importance": 3,
+            "role": "CNN contributor and senior news writer at The Trace",
+            "description": "Commented on Missouri's gun laws and their public safety implications."
+        },
+        {
+            "name": "Quinton Lucas",
+            "importance": 3,
+            "role": "Kansas City Mayor",
+            "description": "One of the leaders who has pushed back against Missouri's restrictions on its cities' ability to fight gun violence."
+        },
+        {
+            "name": "Tishaura Jones",
+            "importance": 3,
+            "role": "St. Louis Mayor",
+            "description": "One of the leaders who has pushed back against Missouri's restrictions on its cities' ability to fight gun violence."
+        },
+        {
+            "name": "Brian Wimes",
+            "importance": 3,
+            "role": "US District Judge",
+            "description": "Ruled that the Second Amendment Preservation Act is invalidated as unconstitutional."
+        },
+        {
+            "name": "Ariane de Vogue",
+            "importance": 1,
+            "role": "Contributor",
+            "description": null
+        },
+        {
+            "name": "Devan Cole",
+            "importance": 1,
+            "role": "Contributor",
+            "description": null
+        }
+        ],
+        "organizations": [
+        {
+            "name": "Kansas City Chiefs",
+            "importance": 3,
+            "description": "Super Bowl celebration rally was held in Kansas City, during which a mass shooting occurred.",
+            "people": null
+        },
+        {
+            "name": "Giffords Law Center to Prevent Gun Violence",
+            "importance": 4,
+            "description": "Stated that Missouri's gun laws are appallingly weak.",
+            "people": null
+        },
+        {
+            "name": "Everytown for Gun Safety",
+            "importance": 4,
+            "description": "Claims Missouri lacks foundational gun violence prevention laws.",
+            "people": null
+        },
+        {
+            "name": "The Trace",
+            "importance": 3,
+            "description": "A nonprofit journalism outlet focusing on gun-related news.",
+            "people": null
+        },
+        {
+            "name": "Bureau of Alcohol, Tobacco, Firearms, and Explosives",
+            "importance": 3,
+            "description": "Specialists are analyzing bullets recovered at the shooting scene in Kansas City.",
+            "people": null
+        }
+        ],
+        "locations": [
+        {
+            "name": "Kansas City",
+            "importance": 5,
+            "description": "Location of the mass shooting following a Super Bowl celebration rally."
+        },
+        {
+            "name": "Missouri",
+            "importance": 5,
+            "description": "State where the mass shooting occurred, known for having some of the weakest gun laws in the US."
+        },
+        {
+            "name": "Union Station",
+            "importance": 2,
+            "description": "Site of the crime scene following the shooting in Kansas City."
+        },
+        {
+            "name": "Jefferson City",
+            "importance": 2,
+            "description": "Missouri State Capitol is located here."
+        }
+        ],
+        "dates": [
+        {
+            "date": "2023",
+            "description": "Kansas City recorded its deadliest-ever year."
+        }
+        ],
+        "statistics": [
+        {
+            "name": "Gun law strength rank in Missouri",
+            "importance": 4,
+            "value": "38th out of 50",
+            "description": "Rank of Missouri among the 50 states in terms of gun law strength."
+        },
+        {
+            "name": "Firearm-related deaths rank in Missouri",
+            "importance": 4,
+            "value": "Top 10",
+            "description": "Missouri is among the top 10 states with the most firearm-related deaths."
+        },
+        {
+            "name": "Mass shootings in Missouri since 2013",
+            "importance": 4,
+            "value": "at least 155",
+            "description": "Number of mass shootings that have occurred in Missouri since 2013."
+        },
+        {
+            "name": "Rise in gun homicide rate after law repeal",
+            "importance": 4,
+            "value": "27%",
+            "description": "Increase in the state's gun homicide rate after the repeal of a permit-to-purchase law in 2007."
+        },
+        {
+            "name": "People killed in mass shooting",
+            "importance": 5,
+            "value": "1",
+            "description": "Number of people killed in the mass shooting at the Kansas City Chiefs parade."
+        },
+        {
+            "name": "People injured in mass shooting",
+            "importance": 5,
+            "value": "at least 23",
+            "description": "Number of people injured in the mass shooting at the Kansas City Chiefs parade."
+        },
+        {
+            "name": "Crowd size at parade",
+            "importance": 3,
+            "value": "around 1 million",
+            "description": "Estimated number of people that gathered to celebrate at the Kansas City Chiefs parade."
+        }
+        ],
+        "connections": null,
+        "quotes": [
+        {
+            "quote": "What are we waiting for? What else do we need to see? How many more families need to be torn apart?",
+            "importance": 5,
+            "speaker": "Joe Biden",
+            "description": "Statement by President Joe Biden in response to the mass shooting in Kansas City."
+        }
+        ],
+        "events": [
+        {
+            "title": "Mass Shooting at Kansas City Chiefs Parade",
+            "importance": 5,
+            "description": "A mass shooting took place resulting in 1 death and at least 23 injuries during a celebration rally following the Super Bowl.",
+            "date": "2023",
+            "time": null,
+            "location": "Kansas City",
+            "participants": null
+        }
+        ]
+    },
+    "Caitlin Clark-onomics and the new era of profitability in college sports": {
+        "people": [
+        {
+            "name": "Caitlin Clark",
+            "importance": 5,
+            "role": "Iowa star",
+            "description": "women's college basketball's all-time leading scorer and economic powerhouse with signed deals with Gatorade, Nike, and State Farm"
+        },
+        {
+            "name": "Patrick Rishe",
+            "importance": 3,
+            "role": "director of the sports business program",
+            "description": "at Washington University in St. Louis"
+        },
+        {
+            "name": "Sam Weber",
+            "importance": 3,
+            "role": "head of marketing and communications",
+            "description": "at Opendorse"
+        },
+        {
+            "name": "Angel Reese",
+            "importance": 2,
+            "role": null,
+            "description": "LSU basketball star with a NIL valuation above $1 million"
+        },
+        {
+            "name": "Flau'jae Johnson",
+            "importance": 2,
+            "role": null,
+            "description": "LSU basketball star with a NIL valuation above $1 million"
+        },
+        {
+            "name": "Tiger Woods",
+            "importance": 2,
+            "role": null,
+            "description": "golfer who began a 27-year relationship with Nike at age 20"
+        },
+        {
+            "name": "LeBron James",
+            "importance": 2,
+            "role": null,
+            "description": "basketball star who signed a lifetime deal with Nike as a high school senior"
+        }
+        ],
+        "organizations": [
+        {
+            "name": "CNN",
+            "importance": 5,
+            "description": "Cable News Network",
+            "people": null
+        },
+        {
+            "name": "Gatorade",
+            "importance": 4,
+            "description": null,
+            "people": null
+        },
+        {
+            "name": "Nike",
+            "importance": 4,
+            "description": null,
+            "people": null
+        },
+        {
+            "name": "State Farm",
+            "importance": 4,
+            "description": null,
+            "people": null
+        },
+        {
+            "name": "Supreme Court",
+            "importance": 4,
+            "description": "The court ruling in 2021 allowed student athletes to make money off their personal brand",
+            "people": null
+        },
+        {
+            "name": "On3",
+            "importance": 3,
+            "description": "Sports data site estimating the total value of Caitlin Clark's partnerships",
+            "people": null
+        },
+        {
+            "name": "WNBA",
+            "importance": 3,
+            "description": "Women's National Basketball Association, where the top salary currently maxes out around $250,000",
+            "people": null
+        },
+        {
+            "name": "Washington University in St. Louis",
+            "importance": 3,
+            "description": null,
+            "people": null
+        },
+        {
+            "name": "Opendorse",
+            "importance": 3,
+            "description": "an online platform that helps connect athletes with NIL deals",
+            "people": null
+        },
+        {
+            "name": "LSU",
+            "importance": 3,
+            "description": "Louisiana State University, home of basketball stars Angel Reese and Flau'jae Johnson",
+            "people": null
+        },
+        {
+            "name": "Spotrac",
+            "importance": 2,
+            "description": "provides information on sports contracts and salaries",
+            "people": null
+        },
+        {
+            "name": "Iowa Hawkeyes",
+            "importance": 3,
+            "description": null,
+            "people": null
+        },
+        {
+            "name": "Michigan Wolverines",
+            "importance": 2,
+            "description": null,
+            "people": null
+        },
+        {
+            "name": "Ohio State",
+            "importance": 2,
+            "description": null,
+            "people": null
+        },
+        {
+            "name": "TickPick",
+            "importance": 2,
+            "description": "a platform providing data on ticket prices",
+            "people": null
+        },
+        {
+            "name": "StubHub",
+            "importance": 2,
+            "description": null,
+            "people": null
+        },
+        {
+            "name": "Fox Sports",
+            "importance": 3,
+            "description": "broadcasted the most-watched women's college basketball game with 1.7 million viewers",
+            "people": null
+        }
+        ],
+        "locations": [
+        {
+            "name": "New York",
+            "importance": 4,
+            "description": null
+        },
+        {
+            "name": "Iowa City",
+            "importance": 3,
+            "description": "Location of the pivotal game against the Michigan Wolverines"
+        },
+        {
+            "name": "Lincoln",
+            "importance": 2,
+            "description": "Location where Nebraska's victory over Iowa attracted 1.7 million viewers"
+        }
+        ],
+        "dates": [],
+        "statistics": [
+        {
+            "name": "Caitlin Clark's partnership value",
+            "importance": 5,
+            "value": "$818,000",
+            "description": "the fifth-highest ranking in all of women's college sports"
+        },
+        {
+            "name": "WNBA top salary",
+            "importance": 4,
+            "value": "$250,000",
+            "description": "the maximum amount a WNBA player can currently earn"
+        },
+        {
+            "name": "LSU stars Angel Reese and Flau'jae Johnson's NIL valuations",
+            "importance": 3,
+            "value": "above $1 million",
+            "description": null
+        },
+        {
+            "name": "average WNBA salary in 2023",
+            "importance": 3,
+            "value": "around $113,000",
+            "description": "according to Spotrac"
+        },
+        {
+            "name": "Tiger Woods' relationship with Nike",
+            "importance": 2,
+            "value": "27-year",
+            "description": null
+        },
+        {
+            "name": "LeBron James' deal with Nike",
+            "importance": 2,
+            "value": "lifetime",
+            "description": null
+        },
+        {
+            "name": "Iowa vs. Michigan game average ticket price",
+            "importance": 4,
+            "value": "$400",
+            "description": "206% more expensive than the same game in November"
+        },
+        {
+            "name": "Iowa vs. Ohio State home game cheapest seat price",
+            "importance": 4,
+            "value": "above $450",
+            "description": "on StubHub on Friday, maxing out above $1,000"
+        },
+        {
+            "name": "Nebraska vs. Iowa viewership",
+            "importance": 5,
+            "value": "1.7 million",
+            "description": "the most-watched women's college basketball game on Fox Sports"
+        }
+        ],
+        "connections": [],
+        "quotes": [],
+        "events": []
+    },
+    "Gwen Stefani says she has to relearn No Doubt songs ahead of ‘amazing’ Coachella reunion": {
+        "people": [
+        {
+            "name": "Gwen Stefani",
+            "importance": 5,
+            "role": "Singer/Frontwoman",
+            "description": "Frontwoman of No Doubt who needs to relearn some of the band's classic songs ahead of their reunion at Coachella."
+        },
+        {
+            "name": "Jimmy Kimmel",
+            "importance": 3,
+            "role": "TV Host",
+            "description": "Host of 'Jimmy Kimmel Live' where Gwen Stefani discussed the upcoming No Doubt reunion."
+        },
+        {
+            "name": "Tony Kanal",
+            "importance": 2,
+            "role": "Musician",
+            "description": "Member of No Doubt."
+        },
+        {
+            "name": "Tom Dumont",
+            "importance": 2,
+            "role": "Musician",
+            "description": "Member of No Doubt."
+        },
+        {
+            "name": "Adrian Young",
+            "importance": 2,
+            "role": "Musician",
+            "description": "Member of No Doubt."
+        },
+        {
+            "name": "Lana Del Rey",
+            "importance": 3,
+            "role": "Singer",
+            "description": "Set to headline Coachella this year."
+        },
+        {
+            "name": "Doja Cat",
+            "importance": 3,
+            "role": "Artist/Musician",
+            "description": "Set to headline Coachella this year."
+        },
+        {
+            "name": "Tyler, The Creator",
+            "importance": 3,
+            "role": "Rapper",
+            "description": "Set to headline Coachella this year."
+        },
+        {
+            "name": "J. Balvin",
+            "importance": 2,
+            "role": "Artist/Musician",
+            "description": "Slated to perform at Coachella."
+        }
+        ],
+        "organizations": [
+        {
+            "name": "No Doubt",
+            "importance": 5,
+            "description": "Iconic ska-punk band set for a reunion at Coachella in April, with Gwen Stefani as the frontwoman.",
+            "people": [
+            {
+                "name": "Gwen Stefani",
+                "importance": 5,
+                "role": null,
+                "description": null
+            },
+            {
+                "name": "Tony Kanal",
+                "importance": 2,
+                "role": null,
+                "description": null
+            },
+            {
+                "name": "Tom Dumont",
+                "importance": 2,
+                "role": null,
+                "description": null
+            },
+            {
+                "name": "Adrian Young",
+                "importance": 2,
+                "role": null,
+                "description": null
+            }
+            ]
+        }
+        ],
+        "locations": [
+        {
+            "name": "Coachella music festival",
+            "importance": 5,
+            "description": "Location of the upcoming No Doubt reunion in April."
+        },
+        {
+            "name": "Indio’s Empire Polo Field",
+            "importance": 4,
+            "description": "The venue for Coachella music festival, hosting the event on two consecutive weekends in April."
+        }
+        ],
+        "dates": [
+        {
+            "date": "1995",
+            "description": "Release of No Doubt's hit album 'Tragic Kingdom.'"
+        },
+        {
+            "date": "2012",
+            "description": "Release of No Doubt's sixth album 'Push and Shove.'"
+        },
+        {
+            "date": "2023-04-12",
+            "description": "Coachella music festival first weekend."
+        },
+        {
+            "date": "2023-04-19",
+            "description": "Coachella music festival second weekend."
+        }
+        ],
+        "statistics": null,
+        "connections": null,
+        "quotes": [
+        {
+            "quote": "I don't remember them... Not at all!",
+            "importance": 4,
+            "speaker": "Gwen Stefani",
+            "description": "Gwen Stefani admitting she needs to relearn some No Doubt songs for the Coachella reunion."
+        },
+        {
+            "quote": "Just have to let them sing it for us",
+            "importance": 3,
+            "speaker": "Gwen Stefani",
+            "description": "Referring to the possibility of the audience singing the lyrics if she forgets them."
+        },
+        {
+            "quote": "Going to be amazing. I'm so excited",
+            "importance": 3,
+            "speaker": "Gwen Stefani",
+            "description": "Gwen Stefani expressing excitement for the No Doubt reunion at Coachella."
+        }
+        ],
+        "events": [
+        {
+            "title": "No Doubt Reunion at Coachella",
+            "importance": 5,
+            "description": "The reunion of the ska-punk band No Doubt featuring Gwen Stefani at the Coachella music festival.",
+            "date": "2023-04",
+            "time": null,
+            "location": null,
+            "participants": null
+        }
+        ]
+    }
+}
+    

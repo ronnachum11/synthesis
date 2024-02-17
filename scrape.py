@@ -164,15 +164,13 @@ if __name__ == "__main__":
     # ---
 
     with open("links.txt") as f:
-        urls = list(
-            map(lambda line: ast.literal_eval(line.strip()), f.readlines()[:100])
-        )
+        urls = list(map(lambda line: ast.literal_eval(line.strip()), f.readlines()))
         n = len(urls)
 
     print("Starting to get articles")
     articles = []
     # with Pool(4) as pool:
-    with concurrent.futures.ThreadPoolExecutor(max_workers=4) as executor:
+    with concurrent.futures.ThreadPoolExecutor() as executor:
         for i, result in enumerate(executor.map(format_article, urls)):
             print("Formatted", i, "/", n, "urls")
             if result is not None:
