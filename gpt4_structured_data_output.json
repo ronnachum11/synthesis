@@ -1,0 +1,113 @@
+{
+    "Takeaways from the $355 million civil fraud ruling against Donald Trump": {
+        "title": "Takeaways from the $355 million civil fraud ruling against Donald Trump",
+        "summary": "Judge Arthur Engoron fined Donald Trump $355 million for fraud and barred him from serving as a company director in New York for three years. Combined with a separate $83 million judgment, Trump's total fines reach $438 million recently.",
+        "key_takeaways": [
+            "Judge Engoron fined Trump $355 million for fraudulently inflating property values.",
+            "Trump is barred from serving as a New York company director for three years.",
+            "The fines add to Trump's recent $83 million defamation penalty for a total of $438 million."
+        ],
+        "importants": {
+            "Arthur Engoron": {
+                "name": "Arthur Engoron",
+                "importance": 5,
+                "role": "Judge",
+                "description": "The judge who fined Donald Trump and barred him from serving as a director in New York companies."
+            },
+            "Donald Trump": {
+                "name": "Donald Trump",
+                "importance": 5,
+                "role": "Former President",
+                "description": "Trump was fined $355 million for fraud and barred from company directorship in New York for three years."
+            },
+            "Trump Organization": {
+                "name": "Trump Organization",
+                "importance": 5,
+                "description": "Engoron declined to dissolve the Trump Organization but installed independent oversight.",
+                "people": null
+            }
+        },
+        "location": {
+            "New York": {
+                "name": "New York",
+                "importance": 5,
+                "description": "Location where Donald Trump has been barred from serving as a director of a company."
+            }
+        },
+        "bias": "BIAS"
+    },
+    "Missouri has some of the weakest gun laws in the US. Here\u2019s how that is impacting the Kansas City shooting investigation": {
+        "title": "Missouri has some of the weakest gun laws in the US. Here\u2019s how that is impacting the Kansas City shooting investigation",
+        "summary": "A mass shooting at a Super Bowl celebration rally in Kansas City left one dead and 23 injured. Missouri's weak gun laws are blamed for its high rate of gun violence.",
+        "key_takeaways": [
+            "Missouri has weak gun laws and a high rate of firearm-related deaths.",
+            "A 27% rise in Missouri's gun homicide rate followed the repeal of a gun law.",
+            "Investigating gun crimes in Missouri is made difficult by lax gun laws."
+        ],
+        "importants": {
+            "Joe Biden": {
+                "name": "Joe Biden",
+                "importance": 5,
+                "role": "President of the United States",
+                "description": "Called for Congress to pass 'reasonable gun safety laws' after the Kansas City mass shooting."
+            }
+        },
+        "location": {
+            "Kansas City": {
+                "name": "Kansas City",
+                "importance": 5,
+                "description": "Location of the Super Bowl celebration rally where the mass shooting occurred."
+            },
+            "Missouri": {
+                "name": "Missouri",
+                "importance": 5,
+                "description": "A state known for weak gun laws and high rates of gun violence."
+            }
+        },
+        "bias": "BIAS"
+    },
+    "Caitlin Clark-onomics and the new era of profitability in college sports": {
+        "title": "Caitlin Clark-onomics and the new era of profitability in college sports",
+        "summary": "Caitlin Clark has become the all-time leading scorer in women's college basketball while showcasing the economic potential of athletes in the new era of college sports profitability.",
+        "key_takeaways": [
+            "Caitlin Clark is the all-time leading scorer in women's college basketball.",
+            "She has signed endorsement deals worth an estimated $818,000.",
+            "Clark's success reflects the marketing power of female athletes in college sports."
+        ],
+        "importants": {
+            "Caitlin Clark": {
+                "name": "Caitlin Clark",
+                "importance": 5,
+                "role": "Iowa star",
+                "description": "Women's college basketball's all-time leading scorer and an influential economic figure in college sports."
+            }
+        },
+        "location": {},
+        "bias": "BIAS"
+    },
+    "Gwen Stefani says she has to relearn No Doubt songs ahead of \u2018amazing\u2019 Coachella reunion": {
+        "title": "Gwen Stefani says she has to relearn No Doubt songs ahead of \u2018amazing\u2019 Coachella reunion",
+        "summary": "Gwen Stefani is brushing up on No Doubt's classic hits for their reunion at Coachella in April, having forgotten some lyrics and not yet started rehearsals.",
+        "key_takeaways": [
+            "Gwen Stefani forgot the lyrics to some No Doubt songs ahead of their Coachella reunion.",
+            "No Doubt last performed together almost a decade ago and will play at Coachella.",
+            "Other artists headlining Coachella include Lana Del Rey, Doja Cat, and Tyler, The Creator."
+        ],
+        "importants": {
+            "Gwen Stefani": {
+                "name": "Gwen Stefani",
+                "importance": 5,
+                "role": "Frontwoman of No Doubt",
+                "description": "Gwen Stefani is revisiting No Doubt's songs for their upcoming performance at Coachella."
+            }
+        },
+        "location": {
+            "Coachella": {
+                "name": "Coachella",
+                "importance": 5,
+                "description": "No Doubt is reuniting for a performance at the Coachella music festival."
+            }
+        },
+        "bias": "BIAS"
+    }
+}
