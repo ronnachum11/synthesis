@@ -14,7 +14,13 @@ import { Synthesis } from "@/components/synthesis";
 
 import { motion, useAnimation } from "framer-motion";
 
-import { naiveRecAlgo, likeCluster, dislikeCluster, viewCluster, readCluster } from "@/lib/actions/clusters";
+import {
+  naiveRecAlgo,
+  likeCluster,
+  dislikeCluster,
+  viewCluster,
+  readCluster,
+} from "@/lib/actions/clusters";
 
 const synthesisTest = {
   title: "HuffPost's Commitment to Providing Free High-Quality Journalism",
@@ -23,7 +29,7 @@ const synthesisTest = {
     "At HuffPost, we believe that everyone needs high-quality journalism, but we understand that not everyone can afford to pay for expensive news subscriptions. That is why we are committed to providing deeply reported, carefully fact-checked news that is freely accessible to everyone. Whether you come to HuffPost for updates on the 2024 presidential race, hard-hitting investigations into critical issues facing our country today, or trending stories that make you laugh, we appreciate you. The truth is, news costs money to produce, and we are proud that we have never put our stories behind an expensive paywall. Would you join us to help keep our stories free for all? Your contribution of as little as $2 will go a long way.",
 };
 
-export function Gist() {
+export function Gist({ currentClusterID }: { currentClusterID: string }) {
   const [arrOfGists, setArrOfGists] = useState([]);
   const [isLoading, setIsLoading] = useState(true); // Start as loading
 
@@ -32,7 +38,7 @@ export function Gist() {
 
   async function fetchInitialGists() {
     try {
-      const res = await naiveRecAlgo("abcd", {}, 5);
+      const res = await naiveRecAlgo([], 5);
       return res;
     } catch (err) {
       console.error(err);
@@ -41,7 +47,8 @@ export function Gist() {
 
   async function fetchNextGist() {
     try {
-      const res = await naiveRecAlgo("abcd", {}, 1);
+      const res = await naiveRecAlgo([], 1);
+      console.log("fetchNextGist", res);
       return res;
     } catch (err) {
       console.error(err);
@@ -49,11 +56,14 @@ export function Gist() {
   }
 
   useEffect(() => {
-    const res = fetchInitialGists().then((res) => {
+    viewCluster(currentClusterID);
+
+    const runGetGists = fetchInitialGists().then((res) => {
+      console.log(res);
       setArrOfGists(res);
       setIsLoading(false);
     });
-  }, []);
+  }, [currentClusterID]);
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -66,6 +76,12 @@ export function Gist() {
             controls.set({ x: "100vw" });
             // Then slide in from the right
             controls.start({ x: 0, opacity: 1 });
+            likeCluster(currentClusterID);
+            // remove the current gist from the arrOfGists, and then request a new one with fetchNextGist to add to the arrOfGists
+            setArrOfGists((old) => old.slice(1));
+            fetchNextGist().then((res) => {
+              setArrOfGists((old) => [...old, res]);
+            });
           });
         } else if (event.key === "k") {
           // Slide right for K
@@ -75,6 +91,7 @@ export function Gist() {
             controls.set({ x: "-100vw" });
             // Then slide in from the left
             controls.start({ x: 0, opacity: 1 });
+            dislikeCluster(currentClusterID);
           });
         }
       }
@@ -86,12 +103,26 @@ export function Gist() {
 
   const currGistData = arrOfGists[0];
 
-  if (!currGistData) return (  
-    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height: ' 100vh'}}>
-      <img src="/synthesis.png" alt="Loading..." className="animate-spin" style={{ height: '8vh', marginBottom: '2vh' }}/>
-      <p>Loading the gists...</p>
-    </div>
-  );
+  if (!currGistData)
+    return (
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          height: " 100vh",
+        }}
+      >
+        <img
+          src="/synthesis.png"
+          alt="Loading..."
+          className="animate-spin"
+          style={{ height: "8vh", marginBottom: "2vh" }}
+        />
+        <p>Loading the gists...</p>
+      </div>
+    );
 
   return (
     <>
