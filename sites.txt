@@ -13,7 +13,6 @@ http://www.npr.org
 http://thebostonchannel.com
 http://www.businessinsider.com
 http://thebusinessjournal.com
-http://www.newrepublic.com
 http://thecitizen.com
 http://www.ign.com
 http://www.sci-news.com
@@ -66,16 +65,11 @@ http://washingtontimes.com
 http://thedailyreview.com
 http://www.nfl.com
 http://www.space.com
-http://washingtontechnology.com
-http://inquirer.net
 http://abcnews.com
 http://www.extremetech.com
 http://thedailytimes.com
 http://mashable.com
 http://www.rollingstone.com
-http://slashdot.org
-http://www.slate.com
-http://bleacherreport.com
 http://www.nascar.com
 http://www.forbes.com
 http://washingtonpost.com

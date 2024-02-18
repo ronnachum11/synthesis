@@ -59,6 +59,17 @@ class Statistic(BaseModel):
     )
 
 
+class Complexity(BaseModel):
+    name: str = Field(..., description="The name of the complexity")
+    importance: int = Field(
+        1,
+        description="The importance of the complexity in the article. 1 is the lowest, 5 is the highest.",
+    )
+    description: Optional[str] = Field(
+        None, description="What it signifies or why its important"
+    )
+
+
 class Connection(BaseModel):
     person1: str = Field(
         ..., description="The name of the first person in the connection"
@@ -72,15 +83,14 @@ class Connection(BaseModel):
     )
 
 
-class Quote(BaseModel):
-    quote: str = Field(..., description="The quote")
+class KeyTerm(BaseModel):
+    term: str = Field(..., description="The term")
     importance: int = Field(
         1,
-        description="The importance of the quote in the article. 1 is the lowest, 5 is the highest.",
+        description="The importance of the term in the article. 1 is the lowest, 5 is the highest.",
     )
-    speaker: str = Field(..., description="The name of the person who said the quote")
     description: Optional[str] = Field(
-        None, description="The relevance of the quote to the broader article"
+        None, description="The relevance of the term to the broader article"
     )
 
 
@@ -104,13 +114,13 @@ class Event(BaseModel):
 
 class ArticleData(BaseModel):
     people: Optional[List[Person]] = None
-    organizations: Optional[List[Organization]] = None
     locations: Optional[List[Location]] = None
-    dates: Optional[List[Date]] = None
+    # dates: Optional[List[Date]] = None
     statistics: Optional[List[Statistic]] = None
     connections: Optional[List[Connection]] = None
-    quotes: Optional[List[Quote]] = None
+    # key_terms: Optional[List[KeyTerm]] = None
     events: Optional[List[Event]] = None
+    key_takeaways: Optional[List[str]] = None
 
 
 class SummarizeResponse(BaseModel):
@@ -119,3 +129,4 @@ class SummarizeResponse(BaseModel):
 
 class UnbiasedResponse(BaseModel):
     text: str = Field(..., description="The unbiased rendition of the article.")
+    title: str = Field(..., description="The title of the article.")

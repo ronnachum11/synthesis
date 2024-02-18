@@ -16,6 +16,7 @@ from collections import defaultdict
 
 load_dotenv()
 
+
 class UnionFind:
     def __init__(self, articles_data):
         self.root = {article["id"]: article["id"] for article in articles_data}
@@ -41,11 +42,9 @@ class Scraper:
 
     def get_categories(self, websites):
         built_sites = map(
-                lambda website: n3k.build(
-                    website, language="en", memoize_articles=True
-                ),
-                websites,
-            )
+            lambda website: n3k.build(website, language="en", memoize_articles=True),
+            websites,
+        )
         categories = []
         for site in built_sites:
             categories += site.category_urls()
@@ -107,7 +106,12 @@ class Scraper:
                 "brand": brand,
                 "url": url,
             }
-            if not a.text or " ad " in a.text or " advertisement " in a.text or len(a.text) < 250:
+            if (
+                not a.text
+                or " ad " in a.text
+                or " advertisement " in a.text
+                or len(a.text) < 250
+            ):
                 advertisements.append(out)
             else:
                 usable_data.append(out)
@@ -117,14 +121,20 @@ class Scraper:
 
     def main(self):
         # Get websites
-        with open("websites.txt", "r") as f:
+        with open("sites.txt", "r") as f:
             websites = list(map(lambda x: x.strip(), f.readlines()))
+
+        n3k.build(websites[0], language="en")
+        sys.exit()
 
         def get_brand(website):
             return [website, n3k.build(website, language="en").brand]
 
         with concurrent.futures.ThreadPoolExecutor() as executor:
             websites = list(executor.map(get_brand, websites))
+
+        # for i in websites:
+        #     print(i)
 
         urls = []
         while len(urls) == 0:
@@ -138,6 +148,10 @@ class Scraper:
         print("Starting to get articles")
         articles = []
 
+        for i in urls:
+            print(i)
+
+        sys.exit()
         with concurrent.futures.ThreadPoolExecutor() as executor:
             for i, result in enumerate(executor.map(self.format_article, urls)):
                 print("Formatted", i, "/", n, "urls")
@@ -183,7 +197,7 @@ class Scraper:
                     print(f"Upserting {i}/{len(data['articles'])}")
                     index.upsert(vectors=vectors)
                     vectors = []
-                    
+
                     if self.ONE_TIME_RUN:
                         v = {"vectors": local_vectors}
                         with open("local_vectors.json", "w") as f:
@@ -210,8 +224,7 @@ class Scraper:
                     filtered = [
                         match["id"]
                         for match in data["matches"]
-                        if match["score"] > threshold
-                        and match["id"] != article["id"]
+                        if match["score"] > threshold and match["id"] != article["id"]
                         # and match["id"] in map(lambda x: x["id"], articles_data)
                     ]
                     for m_id in filtered:
@@ -235,7 +248,9 @@ class Scraper:
 
                 for cluster_of_articles in grouped_articles.values():
                     row_id = str(uuid.uuid4())
-                    data, _ = supabase.table("clusters").insert({"id": row_id}).execute()
+                    data, _ = (
+                        supabase.table("clusters").insert({"id": row_id}).execute()
+                    )
 
                     for article_id in cluster_of_articles:
                         article = mappings[article_id]
@@ -295,8 +310,7 @@ class Scraper:
                     filtered = [
                         match["id"]
                         for match in data["matches"]
-                        if match["score"] > threshold
-                        and match["id"] != article["id"]
+                        if match["score"] > threshold and match["id"] != article["id"]
                         # and match["id"] in map(lambda x: x["id"], articles_data)
                     ]
 
@@ -315,8 +329,9 @@ class Scraper:
                         ]
                         row_id = old_cluster_ids[0]
                         for old in old_cluster_ids[1:]:
-                            supabase.table("articles").update({"cluster_id": row_id}).eq("cluster_id", old).execute()
-
+                            supabase.table("articles").update(
+                                {"cluster_id": row_id}
+                            ).eq("cluster_id", old).execute()
 
                     supabase.table("articles").insert(
                         {
@@ -342,4 +357,8 @@ class Scraper:
 
                 # for cluster_root_id, articles_in_cluster in grouped_articles.items():
                 #     print("Cluster {}: {}".format(cluster_root_id, articles_in_cluster))
-            
+
+
+if __name__ == "__main__":
+    scraper = Scraper()
+    scraper.main()
