@@ -55,7 +55,7 @@ export default function SearchResults() {
             className="animate-spin"
             style={{ height: "8vh", marginBottom: "2vh" }}
           />
-          <p>Synthesizing alternate reading forms...</p>
+          <p>Synthesizing semantic search results...</p>
         </div>
       ) : (
         <div className="p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
