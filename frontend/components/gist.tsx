@@ -13,6 +13,8 @@ import { ReactionButtons } from "@/components/reaction-buttons";
 import { Synthesis } from "@/components/synthesis";
 
 import { motion, useAnimation } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { ThumbsDown, ThumbsUp } from "lucide-react";
 
 import {
   naiveRecAlgo,
@@ -39,6 +41,7 @@ export function Gist({ currentClusterID }: { currentClusterID: string }) {
   const [isLoading, setIsLoading] = useState(true); // Start as loading
   const [viewLoaded, setViewLoaded] = useState(false);
   const [articles, setArticles] = useState<{}[]>([]);
+  const [image, setImage] = useState(null);
 
   const controls = useAnimation();
   const [direction, setDirection] = useState(0);
@@ -64,7 +67,13 @@ export function Gist({ currentClusterID }: { currentClusterID: string }) {
 
   useEffect(() => {
     const fetchArticles = async () => {
-      const articles = await getArticlesByClusterId(currentClusterID);
+      let articles = await getArticlesByClusterId(currentClusterID);
+      articles = articles.filter((article, index, self) =>
+        index === self.findIndex((t) => (
+          t.title === article.title && t.publisher === article.publisher
+        ))
+      );
+      setImage(articles.find(article => article.top_image != null));
       setArticles(articles);
     }
     fetchArticles();
@@ -81,6 +90,10 @@ export function Gist({ currentClusterID }: { currentClusterID: string }) {
   useEffect(() => {
     console.log("articles", articles);
   }, [articles]);
+
+  useEffect(() => {
+    console.log("image", image);
+  }, [image]);
 
 
   function nextGist() {
@@ -211,7 +224,24 @@ export function Gist({ currentClusterID }: { currentClusterID: string }) {
                     ? currentCluster.summary
                     : "No summary available"}
                 </CardDescription>
-                <ReactionButtons />
+                <div className="flex flex-row space-x-2 ml-auto">
+                  <Button variant="outline" size="sm" className="px-1">
+                    <ThumbsUp className="h-4 w-4 mr-2" />
+                    <p className="text-sm text-muted-foreground">
+                      <span className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
+                        <span className="text-xs">⌘</span>J
+                      </span>
+                    </p>
+                  </Button>
+                  <Button variant="outline" size="sm" className="px-1">
+                    <ThumbsDown className="h-4 w-4 mr-2" />
+                    <p className="text-sm text-muted-foreground">
+                      <span className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
+                        <span className="text-xs">⌘</span>K
+                      </span>
+                    </p>
+                  </Button>
+                </div>
               </div>
             </CardHeader>
             <Separator className="mb-4" />
