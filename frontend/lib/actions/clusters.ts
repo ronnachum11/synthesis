@@ -169,6 +169,26 @@ async function updateUserArrayColumn(columnName: string, id: string) {
   return { [columnName]: true };
 }
 
+export async function getArticleById(id: string) {
+  const { data, error } = await supabase
+    .from("articles")
+    .select("*")
+    .eq("id", id)
+    .single();
+
+  if (error) throw new Error(error.message);
+  return data;
+}
+
+export async function getArticlesByClusterId(id: string) {
+  const cluster = await getClusterById(id);
+  const article_ids = cluster.article_ids || [];
+  const articles = await Promise.all(
+    article_ids.map((id: string) => getArticleById(id))
+  );
+  return articles;
+}
+
 export async function likeCluster(id: string) {
   return updateUserArrayColumn("likes", id);
 }

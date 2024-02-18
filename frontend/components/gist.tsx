@@ -20,8 +20,10 @@ import {
   dislikeCluster,
   viewCluster,
   readCluster,
-  getClusterById
+  getClusterById,
+  getArticlesByClusterId
 } from "@/lib/actions/clusters";
+import { Sources } from "./sources";
 
 // const synthesisTest = {
 //   title: "HuffPost's Commitment to Providing Free High-Quality Journalism",
@@ -36,6 +38,7 @@ export function Gist({ currentClusterID }: { currentClusterID: string }) {
   const [nextClusters, setNextClusters] = useState<{}[]>([]);
   const [isLoading, setIsLoading] = useState(true); // Start as loading
   const [viewLoaded, setViewLoaded] = useState(false);
+  const [articles, setArticles] = useState<{}[]>([]);
 
   const controls = useAnimation();
   const [direction, setDirection] = useState(0);
@@ -60,12 +63,24 @@ export function Gist({ currentClusterID }: { currentClusterID: string }) {
   }, []);
 
   useEffect(() => {
+    const fetchArticles = async () => {
+      const articles = await getArticlesByClusterId(currentClusterID);
+      setArticles(articles);
+    }
+    fetchArticles();
+  }, [currentClusterID]);
+
+  useEffect(() => {
     console.log("cluster", currentCluster);
   }, [currentCluster]);
 
   useEffect(() => {
     console.log("nextClusters", nextClusters);
   }, [nextClusters]);
+
+  useEffect(() => {
+    console.log("articles", articles);
+  }, [articles]);
 
 
   function nextGist() {
@@ -220,6 +235,9 @@ export function Gist({ currentClusterID }: { currentClusterID: string }) {
         title={currentCluster.title}
         synthesized_at={currentCluster.created_at}
         synthesis={currentCluster.synthesis}
+      />
+      <Sources
+        articles={articles}
       />
     </>
   );
