@@ -1,5 +1,4 @@
 "use client";
-import { format, set } from "date-fns";
 import { Slider } from "@/components/ui/slider";
 import { ReactionButtons } from "@/components/reaction-buttons";
 import { motion, useAnimation } from "framer-motion";
@@ -10,6 +9,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "./ui/button";
 import { useChat } from "ai/react";
 import { cn } from "@/lib/utils";
+import { format, parseISO } from "date-fns";
 
 // NOTES: I deleted the complexity slider component. Decided it was better to implement in-line here.
 interface SynthesisProps {
@@ -96,6 +96,15 @@ export function Synthesis({
     setActiveHighlight(false);
   };
 
+  const formatDate = (timestamp) => {
+    try {
+      return format(parseISO(timestamp), "PPpp");
+    } catch (error) {
+      console.error("Invalid date format", error);
+      return "Invalid date";
+    }
+  };
+
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       // Check if either Command + J or Command + K is pressed
@@ -118,6 +127,17 @@ export function Synthesis({
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [controls]);
 
+  const [forceCheck, setForceCheck] = useState(false); // Step 1: New state to trigger re-render
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setForceCheck(prev => !prev); // Toggle the state to force re-check
+    }, 1000); // Adjust the time as needed, here it's 5000ms (5 seconds)
+
+    return () => clearTimeout(timer); // Cleanup to avoid memory leaks
+  }, [forceCheck, modifiedSynth, sliderValue]); // Depend on forceCheck to re-run this effect
+
+
   return (
     <motion.div
       initial={{ y: 0, opacity: 1 }}
@@ -131,7 +151,7 @@ export function Synthesis({
               dateTime={new Date().toISOString()}
               className="block text-sm text-muted-foreground"
             >
-              Synthesized at {format(new Date(synthesized_at), "PPpp")}
+              Synthesized at {formatDate(synthesized_at)}
             </time>
             <div className="flex flex-row space-x-4">
               <h1 className="mt-2 inline-block font-semibold text-4xl leading-tight lg:text-5xl">
@@ -159,7 +179,7 @@ export function Synthesis({
           className="flex flex-col space-y-4"
           onMouseUp={handleTextHighlight}
         >
-          {modifiedSynth[sliderValue] != "..." ? (
+          {modifiedSynth[sliderValue] && modifiedSynth[sliderValue] != "..." ? (
             modifiedSynth[sliderValue].split("\n").map((paragraph, i) => (
               <p key={i} className="text-lg leading-relaxed">
                 {paragraph}

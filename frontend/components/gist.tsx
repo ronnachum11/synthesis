@@ -20,21 +20,68 @@ import {
   dislikeCluster,
   viewCluster,
   readCluster,
+  getClusterById
 } from "@/lib/actions/clusters";
 
-const synthesisTest = {
-  title: "HuffPost's Commitment to Providing Free High-Quality Journalism",
-  synthesized_at: "2021-10-10T00:00:00Z",
-  synthesis:
-    "At HuffPost, we believe that everyone needs high-quality journalism, but we understand that not everyone can afford to pay for expensive news subscriptions. That is why we are committed to providing deeply reported, carefully fact-checked news that is freely accessible to everyone. Whether you come to HuffPost for updates on the 2024 presidential race, hard-hitting investigations into critical issues facing our country today, or trending stories that make you laugh, we appreciate you. The truth is, news costs money to produce, and we are proud that we have never put our stories behind an expensive paywall. Would you join us to help keep our stories free for all? Your contribution of as little as $2 will go a long way.",
-};
+// const synthesisTest = {
+//   title: "HuffPost's Commitment to Providing Free High-Quality Journalism",
+//   synthesized_at: "2021-10-10T00:00:00Z",
+//   synthesis:
+//     "At HuffPost, we believe that everyone needs high-quality journalism, but we understand that not everyone can afford to pay for expensive news subscriptions. That is why we are committed to providing deeply reported, carefully fact-checked news that is freely accessible to everyone. Whether you come to HuffPost for updates on the 2024 presidential race, hard-hitting investigations into critical issues facing our country today, or trending stories that make you laugh, we appreciate you. The truth is, news costs money to produce, and we are proud that we have never put our stories behind an expensive paywall. Would you join us to help keep our stories free for all? Your contribution of as little as $2 will go a long way.",
+// };
 
 export function Gist({ currentClusterID }: { currentClusterID: string }) {
   const [arrOfGists, setArrOfGists] = useState([]);
+  const [currentCluster, setCurrentCluster] = useState({});
+  const [nextClusters, setNextClusters] = useState<{}[]>([]);
   const [isLoading, setIsLoading] = useState(true); // Start as loading
+  const [viewLoaded, setViewLoaded] = useState(false);
 
   const controls = useAnimation();
   const [direction, setDirection] = useState(0);
+
+  useEffect(() => {
+    const fetchCluster = async () => {
+      const cluster = await getClusterById(currentClusterID);
+      setCurrentCluster(cluster);
+    };
+
+    fetchCluster();
+  }, []);
+
+  useEffect(() => {
+    const fetchNextClusters = async () => {
+      const clusters = await naiveRecAlgo([], 5);
+      setNextClusters(clusters);
+      setViewLoaded(true);
+    };
+
+    fetchNextClusters();
+  }, []);
+
+  useEffect(() => {
+    console.log("nextClusters", nextClusters);
+  }, [nextClusters]);
+
+
+  function nextGist() {
+    setNextClusters((prevNextClusters) => {
+      if (prevNextClusters.length > 0) {
+        // Move the first cluster to the end of the array to cycle through the existing clusters
+        const firstCluster = prevNextClusters[0];
+        const updatedNextClusters = [...prevNextClusters.slice(1), firstCluster];
+        
+        // Update the current cluster to the first cluster of the previous state
+        setCurrentCluster(firstCluster);
+        
+        return updatedNextClusters;
+      } else {
+        console.log("Cycling back to the initial clusters");
+        // If there are no next clusters, you might want to fetch new ones or handle this case differently
+        return prevNextClusters;
+      }
+    });
+  }
 
   async function fetchInitialGists() {
     try {
@@ -48,7 +95,7 @@ export function Gist({ currentClusterID }: { currentClusterID: string }) {
   async function fetchNextGist() {
     try {
       const res = await naiveRecAlgo([], 1);
-      console.log("fetchNextGist", res);
+      // console.log("fetchNextGist", res);
       return res;
     } catch (err) {
       console.error(err);
@@ -59,7 +106,7 @@ export function Gist({ currentClusterID }: { currentClusterID: string }) {
     viewCluster(currentClusterID);
 
     const runGetGists = fetchInitialGists().then((res) => {
-      console.log(res);
+      // console.log(res);
       setArrOfGists(res);
       setIsLoading(false);
     });
@@ -78,10 +125,11 @@ export function Gist({ currentClusterID }: { currentClusterID: string }) {
             controls.start({ x: 0, opacity: 1 });
             likeCluster(currentClusterID);
             // remove the current gist from the arrOfGists, and then request a new one with fetchNextGist to add to the arrOfGists
-            setArrOfGists((old) => old.slice(1));
-            fetchNextGist().then((res) => {
-              setArrOfGists((old) => [...old, res]);
-            });
+            // setArrOfGists((old) => old.slice(1));
+            // fetchNextGist().then((res) => {
+            //   setArrOfGists((old) => [...old, res]);
+            // });
+            nextGist();
           });
         } else if (event.key === "k") {
           // Slide right for K
@@ -92,6 +140,7 @@ export function Gist({ currentClusterID }: { currentClusterID: string }) {
             // Then slide in from the left
             controls.start({ x: 0, opacity: 1 });
             dislikeCluster(currentClusterID);
+            nextGist();
           });
         }
       }
@@ -101,9 +150,7 @@ export function Gist({ currentClusterID }: { currentClusterID: string }) {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [controls]);
 
-  const currGistData = arrOfGists[0];
-
-  if (!currGistData)
+  if (!currentCluster)
     return (
       <div
         style={{
@@ -136,12 +183,12 @@ export function Gist({ currentClusterID }: { currentClusterID: string }) {
           <Card className="max-w-2xl overflow-hidden m-4">
             <CardHeader className="flex flex-col gap-1 m-0 pb-4 bg-slate-50">
               <CardTitle className="text-3xl font-bold">
-                {currGistData.title ? currGistData.title : "Untitled"}
+                {currentCluster.title ? currentCluster.title : "Untitled"}
               </CardTitle>
               <div className="flex flex-row space-between items-end">
                 <CardDescription className="leading-relaxed">
-                  {currGistData.summary
-                    ? currGistData.summary
+                  {currentCluster.summary
+                    ? currentCluster.summary
                     : "No summary available"}
                 </CardDescription>
                 <ReactionButtons />
@@ -152,7 +199,7 @@ export function Gist({ currentClusterID }: { currentClusterID: string }) {
               <div>
                 <h2 className="font-semibold text-xl mb-4 mt-2">Takeaways</h2>
                 <ul className="list-disc ml-8 text-sm space-y-2">
-                  {currGistData.key_takeaways?.map((takeaway, i) => (
+                  {currentCluster.key_takeaways?.map((takeaway, i) => (
                     <li key={i}>{takeaway}</li>
                   ))}
                 </ul>
@@ -165,9 +212,9 @@ export function Gist({ currentClusterID }: { currentClusterID: string }) {
         </div>
       </motion.div>
       <Synthesis
-        title={synthesisTest.title}
-        synthesized_at={synthesisTest.synthesized_at}
-        synthesis={synthesisTest.synthesis}
+        title={currentCluster.title}
+        synthesized_at={currentCluster.created_at}
+        synthesis={currentCluster.synthesis}
       />
     </>
   );
