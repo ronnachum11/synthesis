@@ -40,6 +40,7 @@
     "@radix-ui/react-tooltip": "^1.0.7",
     "@supabase/ssr": "^0.1.0",
     "@supabase/supabase-js": "^2.39.6",
+    "ai": "^2.2.35",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "cmdk": "^0.2.1",
@@ -53,8 +54,11 @@
     "next": "14.1.0",
     "next-themes": "^0.2.1",
     "openai": "^4.28.0",
+<<<<<<< HEAD
     "node-fetch": "^3.3.2",
     "pinecone-client": "^2.0.0",
+=======
+>>>>>>> c23d7dd (add highlighting synthesis feature)
     "react": "^18",
     "react-day-picker": "^8.10.0",
     "react-dom": "^18",

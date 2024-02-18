@@ -3,8 +3,14 @@ import { format, set } from "date-fns";
 import { Slider } from "@/components/ui/slider";
 import { ReactionButtons } from "@/components/reaction-buttons";
 import { motion, useAnimation } from "framer-motion";
-import { use, useEffect, useRef, useState } from "react";
+
 import { getSynthesisByComplexity } from "@/lib/actions/synthesis";
+import { useEffect, useState } from "react";
+import { X, Send } from "lucide-react";
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "./ui/button";
+import { useChat } from "ai/react";
+import { cn } from "@/lib/utils";
 
 // NOTES: I deleted the complexity slider component. Decided it was better to implement in-line here.
 interface SynthesisProps {
@@ -67,6 +73,29 @@ export function Synthesis({
   }, [sliderValue]);
 
   const mp = ["Concise", "Easy", "Normal", "Detailed"];
+  const [highlightedText, setHighlightedText] = useState("");
+  const [activeHighlight, setActiveHighlight] = useState(true);
+  const {
+    messages,
+    input,
+    handleInputChange,
+    handleSubmit,
+    setInput,
+    setMessages,
+  } = useChat({
+    body: {
+      synthesis,
+    },
+  });
+
+  const [hideButtons, setHideButtons] = useState(false);
+  const [showTextbox, setShowTextbox] = useState(false);
+
+  const handleTextHighlight = () => {
+    const text = window.getSelection().toString();
+    setHighlightedText(text);
+    setActiveHighlight(false);
+  };
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -89,11 +118,12 @@ export function Synthesis({
     // Clean up
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [controls]);
+
   return (
     <motion.div
       initial={{ y: 0, opacity: 1 }}
       animate={controls}
-      className="container relative max-w-3xl py-6 lg:py-10"
+      className="flex flex-row container relative max-w-6xl py-6 lg:py-10"
     >
       <article className="container relative max-w-3xl py-6 lg:py-10">
         <div className="flex flex-col space-y-2 mb-4">
@@ -139,6 +169,87 @@ export function Synthesis({
           )}
         </div>
       </article>
+      {highlightedText && (
+        <div className="max-w-64 flex flex-col space-y-4">
+          <div>
+            <X
+              onClick={() => {
+                setActiveHighlight(!activeHighlight);
+                setHighlightedText("");
+                setMessages([]);
+                setShowTextbox(false);
+                setHideButtons(false);
+              }}
+            />
+            <div className="flex flex-col space-y-2">
+              <blockquote className="mt-2 border-l-2 pl-6 italic">
+                {highlightedText}
+              </blockquote>
+              {messages.map((m, i) => (
+                <blockquote key={i} className="mr-2 border-r-2 pr-6 italic">
+                  {m.role === "user" ? "" : m.content}
+                </blockquote>
+              ))}
+            </div>
+          </div>
+
+          {/* <div>
+            <X
+              onClick={() => {
+                setActiveHighlight(!activeHighlight);
+                setHighlightedText("");
+              }}
+            />
+            <blockquote className="mt-2 border-l-2 pl-6 italic">
+              {highlightedText}
+            </blockquote>
+          </div> */}
+          <div
+            className={cn(
+              "flex flex-col space-y-2",
+              hideButtons ? "hidden" : ""
+            )}
+          >
+            <form onSubmit={handleSubmit} className="flex flex-col space-y-2">
+              <Button
+                onClick={() => {
+                  setInput("Explain this to me! I don't understand.");
+                }}
+                type="submit"
+              >
+                Explain this further
+              </Button>
+              <Button
+                onClick={() => {
+                  setShowTextbox(true);
+                  setHideButtons(true);
+                }}
+              >
+                Ask a question
+              </Button>
+            </form>
+          </div>
+          <div
+            className={cn(
+              "flex flex-col space-y-2",
+              !showTextbox ? "hidden" : ""
+            )}
+          >
+            <form onSubmit={handleSubmit} className="flex flex-col space-y-2">
+              <Textarea value={input} onChange={handleInputChange} />
+              <Button className="w-full" type="submit">
+                <Send />
+              </Button>
+            </form>
+          </div>
+          {/* <div className="flex flex-row">
+            <Textarea />
+            <Button size="icon">
+              <Send />
+            </Button>
+          </div> */}
+        </div>
+      )}
     </motion.div>
   );
 }
