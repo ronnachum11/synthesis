@@ -16,6 +16,7 @@ export function SignupForm({ className, ...props }: SignupFormProps) {
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
   const [email, setEmail] = React.useState<string>("");
   const [password, setPassword] = React.useState<string>("");
+  const [accessCode, setAccessCode] = React.useState<string>("");
 
   const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(event.target.value);
@@ -25,13 +26,21 @@ export function SignupForm({ className, ...props }: SignupFormProps) {
     setPassword(event.target.value);
   };
 
+  const handleAccessCodeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setAccessCode(event.target.value);
+  };
+
   async function onSubmit() {
     setIsLoading(true);
 
     try {
-      console.log("HERE");
-      await signup(email, password);
-      toast.success("Check your email for a confirmation link!");
+      if (accessCode == "SynthesisHacks") {
+          console.log("HERE");
+          await signup(email, password);
+          toast.success("Check your email for a confirmation link!");
+      } else {
+        toast.error("Invalid access code.");
+      }
     } catch (error) {
       toast.error("Something went wrong.");
     }
@@ -70,6 +79,22 @@ export function SignupForm({ className, ...props }: SignupFormProps) {
             type="password"
             autoCapitalize="none"
             autoComplete="password"
+            autoCorrect="off"
+            disabled={isLoading}
+          />
+        </div>
+        <div className="grid gap-1">
+          <Label className="sr-only" htmlFor="email">
+            Password
+          </Label>
+          <Input
+            id="accessCode"
+            value={accessCode}
+            onChange={handleAccessCodeChange}
+            placeholder="Access Code"
+            type="input"
+            autoCapitalize="none"
+            autoComplete="none"
             autoCorrect="off"
             disabled={isLoading}
           />

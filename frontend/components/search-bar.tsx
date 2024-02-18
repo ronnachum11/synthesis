@@ -21,14 +21,15 @@ export function SearchBar() {
     // Encode the query for URL usage
     const encodedQuery = encodeURIComponent(query);
 
-    if (pathname === "/") {
+    if (!pathname.startsWith("/news")) {
       // Navigate to the desired page with the encoded query
       router.push(`results/?query=${encodedQuery}`);
-    } else if (pathname.startsWith("/news")) {
+    }
+      // } else if (pathname.startsWith("/news")) {
       // Handle search specifically for "/news" path or do nothing
       // Example: navigate to news search results page
-      router.push(`/news?query=${encodedQuery}`);
-    }
+      // router.push(`/news?query=${encodedQuery}`);
+    // }
   }
 
   async function handleKeyDown(e: React.KeyboardEvent<HTMLInputElement>) {

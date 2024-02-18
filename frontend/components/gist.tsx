@@ -214,7 +214,7 @@ export function Gist({ currentClusterID }: { currentClusterID: string }) {
       >
         <div className={`card-animation-container`}>
           <Card className="max-w-2xl overflow-hidden m-4">
-            <CardHeader className="flex flex-col gap-1 m-0 pb-4 bg-slate-50">
+            <CardHeader className="flex flex-col gap-1 m-0 pb-4 bg-background">
               <CardTitle className="text-3xl font-bold">
                 {currentCluster.title ? currentCluster.title : "Untitled"}
               </CardTitle>

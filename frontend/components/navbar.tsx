@@ -5,6 +5,7 @@ import { createClient } from "@/utils/supabase/server";
 import { cookies } from "next/headers";
 import { Button } from "./ui/button";
 import Link from "next/link";
+import { ModeToggle } from "./mode-toggle";
 
 export async function Navbar() {
   const cookieStore = cookies();
@@ -18,6 +19,7 @@ export async function Navbar() {
       <div className="flex flex-row w-full items-center space-x-2 p-4 border-b">
         <Logo />
         <SearchBar />
+        <ModeToggle />
         <Button variant="default" asChild>
           <Link href="/login">Login</Link>
         </Button>
@@ -28,6 +30,7 @@ export async function Navbar() {
     <div className="flex flex-row w-full items-center space-x-2 p-4 border-b">
       <Logo />
       <SearchBar />
+      <ModeToggle />
       <Logout />
     </div>
   );
