@@ -10,6 +10,7 @@ import { Button } from "./ui/button";
 import { useChat } from "ai/react";
 import { cn } from "@/lib/utils";
 import { format, parseISO } from "date-fns";
+import { ThumbsDown, ThumbsUp } from "lucide-react";
 
 // NOTES: I deleted the complexity slider component. Decided it was better to implement in-line here.
 interface SynthesisProps {
@@ -40,6 +41,20 @@ export function Synthesis({
     "...",
   ]);
   const [sliderValue, setSliderValue] = useState(2);
+
+  const handleAnimationAndLogic = (direction: 'up' | 'down') => {
+    // Trigger the animation to move off the screen
+    controls.start({ y: 1000, opacity: 0 });
+
+    // Here, you would also handle the logic to bring in the new Gist
+    // For example, you might set a timeout to reset the animation after a delay
+    setTimeout(() => {
+      controls.start({ y: 0, opacity: 1 });
+    }, 1000); // Adjust the delay as needed
+
+    // Additional logic based on the direction can be added here
+    console.log(`Moving ${direction}`);
+  };
 
   // useEffect(() => {
   //   setModifiedSynth({
@@ -107,23 +122,15 @@ export function Synthesis({
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      // Check if either Command + J or Command + K is pressed
-      if ((event.key === "j" || event.key === "k") && event.metaKey) {
-        // Trigger the animation to move off the screen
-        controls.start({ y: 1000, opacity: 0 });
-
-        // Here, you would also handle the logic to bring in the new Gist
-        // For example, you might set a timeout to reset the animation after a delay
-        setTimeout(() => {
-          controls.start({ y: 0, opacity: 1 });
-        }, 1000); // Adjust the delay as needed
+      if (event.key === "j" && event.metaKey) {
+        handleAnimationAndLogic('up');
+      } else if (event.key === "k" && event.metaKey) {
+        handleAnimationAndLogic('down');
       }
     };
 
-    // Attach the event listener
     window.addEventListener("keydown", handleKeyDown);
 
-    // Clean up
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [controls]);
 
@@ -170,7 +177,24 @@ export function Synthesis({
               />
               <div>{mp[sliderValue]}</div>
             </div>
-            <ReactionButtons />
+            <div className="flex flex-row space-x-2 ml-auto">
+              <Button variant="outline" size="sm" className="px-1" onClick={() => handleAnimationAndLogic('up')}>
+                <ThumbsUp className="h-4 w-4 mr-2" />
+                <p className="text-sm text-muted-foreground">
+                  <span className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
+                    <span className="text-xs">⌘</span>J
+                  </span>
+                </p>
+              </Button>
+              <Button variant="outline" size="sm" className="px-1" onClick={() => handleAnimationAndLogic('down')}>
+                <ThumbsDown className="h-4 w-4 mr-2" />
+                <p className="text-sm text-muted-foreground">
+                  <span className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
+                    <span className="text-xs">⌘</span>K
+                  </span>
+                </p>
+              </Button>
+            </div>
           </div>
         </div>
         {/* <hr className="my-4" /> */}
