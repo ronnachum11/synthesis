@@ -1,4 +1,4 @@
-import { globalSearch } from "../lib/actions/search";
+
 
 export default function Home() {
   return (

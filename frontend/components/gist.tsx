@@ -14,7 +14,7 @@ import { Synthesis } from "@/components/synthesis";
 
 import { motion, useAnimation } from "framer-motion";
 
-import { naiveRecAlgo } from "@/lib/actions/clusters";
+import { naiveRecAlgo, likeCluster, dislikeCluster, viewCluster, readCluster } from "@/lib/actions/clusters";
 
 const synthesisTest = {
   title: "HuffPost's Commitment to Providing Free High-Quality Journalism",
@@ -47,6 +47,10 @@ export function Gist() {
       console.error(err);
     }
   }
+
+  useEffect(() => {
+    viewCluster("550e8400-e29b-41d4-a716-446655440000");
+  });
 
   useEffect(() => {
     const res = fetchInitialGists().then((res) => {
