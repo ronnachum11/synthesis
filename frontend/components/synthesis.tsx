@@ -127,11 +127,16 @@ export function Synthesis({
         {/* <hr className="my-4" /> */}
 
         <div className="flex flex-col space-y-4">
-          {modifiedSynth[sliderValue].split("\n").map((paragraph, i) => (
+          {modifiedSynth[sliderValue] != "..." ? (modifiedSynth[sliderValue].split("\n").map((paragraph, i) => (
             <p key={i} className="text-lg leading-relaxed">
               {paragraph}
             </p>
-          ))}
+          ))) : (
+            <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+              <img src="/synthesis.png" alt="Loading..." className="animate-spin" style={{ height: '8vh', marginBottom: '2vh' }}/>
+              <p>Synthesizing alternate reading forms...</p>
+            </div>
+          )}
         </div>
       </article>
     </motion.div>

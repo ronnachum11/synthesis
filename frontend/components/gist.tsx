@@ -86,7 +86,12 @@ export function Gist() {
 
   const currGistData = arrOfGists[0];
 
-  if (!currGistData) return <div>Loading...</div>;
+  if (!currGistData) return (  
+    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height: ' 100vh'}}>
+      <img src="/synthesis.png" alt="Loading..." className="animate-spin" style={{ height: '8vh', marginBottom: '2vh' }}/>
+      <p>Loading the gists...</p>
+    </div>
+  );
 
   return (
     <>
