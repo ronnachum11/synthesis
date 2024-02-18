@@ -1,10 +1,11 @@
 import Globe from "@/components/globe";
 import Image from "next/image";
+import Link from 'next/link';
 
 export default function Home() {
   return (
-    <main className="min-h-screen flex flex-col items-center p-16">
-      <div className="flex flex-col gap-12 items-center max-w-4xl">
+    <main className="min-h-screen flex flex-col items-center p-16 pt-8">
+      <div className="flex flex-col gap-8 items-center max-w-4xl">
         <div className="flex flex-col gap-3 items-center">
           <div className="text-7xl font-black">Synthesis</div>
           <div className="text-2xl font-bold text-slate-600">
@@ -13,11 +14,16 @@ export default function Home() {
         </div>
         <Image
           src="world.svg"
-          width="40"
-          height="40"
-          className="w-full max-w-2xl"
+          width="500"
+          height="50"
+          // className="w-full max-w-2xl"
           alt="Landing page"
         />
+        <Link href="/news/15db7a48-eaca-42b8-b3f9-1e11cef77792" passHref>
+          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out">
+            Jump into the synthesis
+          </button>
+        </Link>
         <div className="flex flex-col gap-8">
           <div className="text-2xl font-semibold justify-center flex">
             Enjoy your news on your own terms.
