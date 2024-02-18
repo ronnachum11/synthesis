@@ -13,12 +13,14 @@ export async function POST(request: Request) {
     cookies: () => cookieStore,
   });
 
-  await supabase.auth.signInWithPassword({
+  const { error } = await supabase.auth.signInWithPassword({
     email,
     password,
   });
 
-  return NextResponse.redirect(new URL("/", request.url), {
-    status: 301,
-  });
+  if (error) {
+    return NextResponse.json({ error: "Invalid email or password" });
+  }
+
+  return NextResponse.json({ success: true });
 }

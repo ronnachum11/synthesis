@@ -2,7 +2,7 @@
 import { SearchBar } from "@/components/search-bar";
 import { Logo } from "@/components/logo";
 // import { Article } from "@/components/article";
-import { GistCard } from "@/components/gist-card";
+import { Gist } from "@/components/gist";
 import { DisplayGraph } from "@/components/graph-test";
 import { Slider } from "@/components/ui/slider";
 import { Button } from "@/components/ui/button";
@@ -63,7 +63,7 @@ export default function SwipeView() {
         <SearchBar />
       </div>
       <div className="h-fit flex justify-center items-center p-12 space-x-8">
-        <GistCard />
+        <Gist />
         <div className="w-1/3 h-1/2">
           <DisplayGraph />
           {/* <DisplayTimeline /> */}

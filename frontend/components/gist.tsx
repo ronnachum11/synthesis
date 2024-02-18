@@ -12,7 +12,7 @@ import { CategoryBar } from "@tremor/react";
 import { Button } from "./ui/button";
 import { ThumbsDown, ThumbsUp } from "lucide-react";
 
-export function GistCard() {
+export function Gist() {
   return (
     <Card className="max-w-lg overflow-hidden">
       <CardHeader className="flex flex-col gap-1 m-0 pb-4 bg-slate-50">
@@ -54,32 +54,6 @@ export function GistCard() {
             <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
           </ul>
         </div>
-        {/* <div>
-          <h2 className="font-semibold mb-4 text-xl">Major Actors</h2>
-          <ul className="text-sm flex flex-col space-y-4">
-            <li className="flex flex-row space-x-2 items-center">
-              <Avatar>
-                <AvatarImage src="https://assets.editorial.aetnd.com/uploads/2016/11/donald-trump-gettyimages-687193180.jpg" />
-                <AvatarFallback>DT</AvatarFallback>
-              </Avatar>
-              <p className="font-medium">Donald Trump</p>
-            </li>
-            <li className="flex flex-row space-x-2 items-center">
-              <Avatar>
-                <AvatarImage src="https://image.cnbcfm.com/api/v1/image/106878527-1620223837055-106748412-1602881184740-biden.jpg" />
-                <AvatarFallback>JB</AvatarFallback>
-              </Avatar>
-              <p className="font-medium">Joe Biden</p>
-            </li>
-            <li className="flex flex-row space-x-2 items-center">
-              <Avatar>
-                <AvatarImage src="https://www.whitehouse.gov/wp-content/uploads/2021/04/V20210305LJ-0043.jpg" />
-                <AvatarFallback>KH</AvatarFallback>
-              </Avatar>
-              <p className="font-medium">Kamala Harris</p>
-            </li>
-          </ul>
-        </div> */}
       </CardContent>
       <CardFooter className="pb-0 px-0 -mx-2">
         <CategoryBar

@@ -1,5 +1,6 @@
 "use client";
 import { Button } from "@/components/ui/button";
+import { redirect } from "next/navigation";
 
 export default function Logout() {
   async function Logout() {
@@ -9,6 +10,7 @@ export default function Logout() {
         "Content-Type": "application/json",
       },
     });
+    redirect("/login");
   }
   return (
     <Button variant="outline" onClick={Logout}>

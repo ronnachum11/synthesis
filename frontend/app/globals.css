@@ -124,3 +124,26 @@
   background: linear-gradient(to bottom, transparent, white);
   pointer-events: none;
 } */
+
+/* More complex floating animation */
+@keyframes float {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  25% {
+    transform: translate(10px, -20px);
+  }
+  50% {
+    transform: translate(-20px, 10px);
+  }
+  75% {
+    transform: translate(20px, 20px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+.floating {
+  animation: float 10s ease-in-out infinite;
+}

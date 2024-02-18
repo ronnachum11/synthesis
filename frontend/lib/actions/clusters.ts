@@ -15,3 +15,5 @@ export async function getClusters() {
 
   return data;
 }
+
+export async function getClusterByID() {}

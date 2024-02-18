@@ -1,3 +1,4 @@
+"use client";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { Button, buttonVariants } from "@/components/ui/button";
@@ -5,7 +6,7 @@ import { format } from "date-fns";
 import { ThumbsUp, ThumbsDown } from "lucide-react";
 import { Slider } from "@/components/ui/slider";
 
-export function Article() {
+export function Synthesis() {
   return (
     <article className="container relative max-w-3xl py-6 lg:py-10">
       <div className="flex flex-col space-y-2">

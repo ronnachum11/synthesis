@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
+import { redirect } from "next/navigation";
 
 interface LoginFormProps extends React.HTMLAttributes<HTMLDivElement> {}
 
@@ -27,15 +28,23 @@ export function LoginForm({ className, ...props }: LoginFormProps) {
     setIsLoading(true);
 
     try {
-      await fetch("/login/api/", {
+      const res = await fetch("/login/api/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ email, password }),
       });
-      toast.success("You have successfully logged in.");
+      const data = await res.json();
+      console.log("DATA", data);
+      if (data.success) {
+        toast.success("You have successfully logged in.");
+      } else if (data.error != null) {
+        toast.error(data.error);
+      }
+      redirect("/");
     } catch (error) {
+      console.log(error);
       toast.error("Something went wrong.");
     }
 
