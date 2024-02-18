@@ -1,6 +1,10 @@
+import { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
-import { LoginForm } from "@/components/login-form";
+import { cn } from "@/lib/utils";
+import { buttonVariants } from "@/components/ui/button";
+import { SignupForm } from "@/components/signup-form";
 
 export default function AuthenticationPage() {
   return (
@@ -9,16 +13,16 @@ export default function AuthenticationPage() {
         <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]">
           <div className="flex flex-col space-y-2 text-center">
             <h1 className="text-2xl font-semibold tracking-tight">
-              Login to you&apos;re account.
+              Create an account
             </h1>
             <p className="text-sm text-muted-foreground">
-              Don&apos; have an account?{" "}
-              <Link href="/signup" className="font-semibold">
-                Signup here
+              Already have an account?{" "}
+              <Link href="/login" className="font-semibold">
+                Login here
               </Link>
             </p>
           </div>
-          <LoginForm />
+          <SignupForm />
           <p className="px-8 text-center text-sm text-muted-foreground">
             By clicking continue, you agree to our{" "}
             <Link
