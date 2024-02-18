@@ -7,36 +7,54 @@ import { createClient } from "@/utils/supabase/server";
 const cookieStore = cookies();
 const supabase = createClient(cookieStore);
 
-export async function naiveRecAlgo(userId: string, currentClusters: any[], n: number) {
-  // Retrieve the user's viewed clusters
-  const { data: userData, error: userError } = await supabase
-    .from('profiles')
-    .select('views')
-    .eq('id', userId)
-    .single();
+// export async function naiveRecAlgo(userId: string, currentClusters: any[], n: number) {
+//   // Retrieve the user's viewed clusters
+//   const { data: userData, error: userError } = await supabase
+//     .from('profiles')
+//     .select('views')
+//     .eq('id', userId)
+//     .single();
 
-  if (userError || !userData) {
-    console.error("User not found or error fetching user data");
-    return [];
+//   if (userError || !userData) {
+//     console.error("User not found or error fetching user data");
+//     return [];
+//   }
+
+//   const viewedClusters = userData.views || [];
+
+//   // Query for clusters not viewed by the user and not in the currentClusters list
+//   const { data: clustersData, error: clustersError } = await supabase
+//     .from('clusters')
+//     .select('*, cardinality(article_ids) as article_count') // Use cardinality to get the length of article_ids array
+//     .not('id', 'in', `(${viewedClusters.join(',')})`) // Exclude clusters the user has viewed
+//     .not('id', 'in', `(${currentClusters.map(cluster => cluster.id).join(',')})`) // Exclude clusters already in currentClusters
+//     .order('article_count', { ascending: false }) // Order by the length of article_ids
+//     .limit(n);
+
+//   if (clustersError) {
+//     console.error("Error fetching clusters");
+//     return [];
+//   }
+
+//   return clustersData;
+// }
+
+export async function naiveRecAlgo(
+  userId: string,
+  currentClusters: any,
+  n: number
+) {
+  // make an array of n clusters: { cluster: string, title: string, summary: string}
+  var arr = [];
+  for (var i = 0; i < n; i++) {
+    arr.push({
+      cluster: i.toString(),
+      title: `title${i}`,
+      summary: `summary${i}`,
+    });
   }
 
-  const viewedClusters = userData.views || [];
-
-  // Query for clusters not viewed by the user and not in the currentClusters list
-  const { data: clustersData, error: clustersError } = await supabase
-    .from('clusters')
-    .select('*, cardinality(article_ids) as article_count') // Use cardinality to get the length of article_ids array
-    .not('id', 'in', `(${viewedClusters.join(',')})`) // Exclude clusters the user has viewed
-    .not('id', 'in', `(${currentClusters.map(cluster => cluster.id).join(',')})`) // Exclude clusters already in currentClusters
-    .order('article_count', { ascending: false }) // Order by the length of article_ids
-    .limit(n);
-
-  if (clustersError) {
-    console.error("Error fetching clusters");
-    return [];
-  }
-
-  return clustersData;
+  return arr;
 }
 
 // const { data, error } = await supabase.auth.getUser();
