@@ -8,6 +8,10 @@ const cookieStore = cookies();
 const supabase = createClient(cookieStore);
 
 export async function naiveRecAlgo(currentClusters: any[], n: number) {
+  const cluster_ids = ['eed09241-f900-41fa-a5b5-e03ea4260411', '3916e1de-38d4-4155-8a61-056e889b6d6c', '3398dbed-6f0d-46e9-8e81-a6b37b86d810', '59068869-441e-448a-9891-acdb96523ed8', '2cd4539b-5771-47c4-8dfa-bba83b95afb2']
+  const clusters = await Promise.all(cluster_ids.map(id => getClusterById(id)))
+  return clusters;
+
   // Retrieve the user's id
   const { data: userdat, error: usererr } = await supabase.auth.getUser();
   // Retrieve the user's viewed clusters
@@ -115,6 +119,8 @@ export async function getClusterById(id: string) {
     .eq("id", id)
     .single();
 
+  console.log(data);
+
   if (error) throw new Error(error.message);
   return data;
 }
@@ -161,6 +167,26 @@ async function updateUserArrayColumn(columnName: string, id: string) {
   }
 
   return { [columnName]: true };
+}
+
+export async function getArticleById(id: string) {
+  const { data, error } = await supabase
+    .from("articles")
+    .select("*")
+    .eq("id", id)
+    .single();
+
+  if (error) throw new Error(error.message);
+  return data;
+}
+
+export async function getArticlesByClusterId(id: string) {
+  const cluster = await getClusterById(id);
+  const article_ids = cluster.article_ids || [];
+  const articles = await Promise.all(
+    article_ids.map((id: string) => getArticleById(id))
+  );
+  return articles;
 }
 
 export async function likeCluster(id: string) {
