@@ -1,3 +1,6 @@
 {
-  "extends": []
+  "extends": "next/core-web-vitals",
+  "ignorePatterns": [
+    "_test/**"
+  ]
 }
