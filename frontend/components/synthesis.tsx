@@ -98,7 +98,7 @@ export function Synthesis({
 
   const formatDate = (timestamp) => {
     try {
-      return format(parseISO(timestamp), "PPpp");
+      return format(parseISO(timestamp), "h:mm a 'PST on' MM/dd/yy");
     } catch (error) {
       console.error("Invalid date format", error);
       return "Invalid date";

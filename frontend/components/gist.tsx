@@ -60,6 +60,10 @@ export function Gist({ currentClusterID }: { currentClusterID: string }) {
   }, []);
 
   useEffect(() => {
+    console.log("cluster", currentCluster);
+  }, [currentCluster]);
+
+  useEffect(() => {
     console.log("nextClusters", nextClusters);
   }, [nextClusters]);
 
@@ -150,7 +154,8 @@ export function Gist({ currentClusterID }: { currentClusterID: string }) {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [controls]);
 
-  if (!currentCluster)
+  console.log(currentCluster, "currentCluster")
+  if (Object.keys(currentCluster).length === 0)
     return (
       <div
         style={{
