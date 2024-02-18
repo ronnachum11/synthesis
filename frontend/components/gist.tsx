@@ -135,16 +135,6 @@ export function Gist({ currentClusterID }: { currentClusterID: string }) {
   }
 
   useEffect(() => {
-    viewCluster(currentClusterID);
-
-    const runGetGists = fetchInitialGists().then((res) => {
-      // console.log(res);
-      setArrOfGists(res);
-      setIsLoading(false);
-    });
-  }, [currentClusterID]);
-
-  useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.metaKey) {
         if (event.key === "j") {
