@@ -62,12 +62,12 @@ export default function SearchResults() {
           {searchResults.map((result: any) => {
             return (
               <Link key={result.id} href={`/news/${result.cluster_id}`}>
-                <Card className="bg-white rounded-sm">
+                <Card className="rounded-sm">
                   <CardContent className="p-6">
-                    <h2 className="text-xl font-semibold text-gray-900 mb-4">
+                    <h2 className="text-xl font-semibold mb-4">
                       {result.title}
                     </h2>
-                    <p className="text-gray-700">{result.excerpt}</p>
+                    <p className="">{result.excerpt}</p>
                   </CardContent>
                 </Card>
               </Link>
