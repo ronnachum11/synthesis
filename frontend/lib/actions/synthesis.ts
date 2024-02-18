@@ -1,4 +1,5 @@
 "use server";
+import OpenAI from "openai";
 
 // cache into state
 export async function generateKeywordDescription() {
@@ -15,7 +16,39 @@ export async function askQuestionOnHighlight(question: string) {
 
 export async function getSynthesisByComplexity(
   clusterId: string,
-  complexityLevel: number
+  complexityLevel: string,
+  synthesis: string,
+  currentSynthesis: string
 ) {
-  return { synthesis: "synthesis" };
+  if (currentSynthesis !== "...") {
+    return { level: complexityLevel, text: currentSynthesis };
+  }
+  if (complexityLevel == "normal") {
+    return { level: "normal", text: synthesis };
+  }
+  const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+
+  console.log("ran here");
+
+  const mp = ["concise", "easy", "normal", "very detailed"];
+
+  const chatCompletion = await openai.chat.completions.create({
+    messages: [
+      {
+        role: "system",
+        content:
+          "Given a news article, make the understanding level " +
+          mp[complexityLevel],
+      },
+      {
+        role: "user",
+        content: synthesis,
+      },
+    ],
+    model: "gpt-3.5-turbo",
+  });
+  console.log(chatCompletion);
+  return {
+    text: chatCompletion.choices[0].message.content,
+  };
 }
