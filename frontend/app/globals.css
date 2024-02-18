@@ -74,19 +74,3 @@
     @apply bg-background text-foreground;
   }
 }
-
-.card-animation-container {
-  transition: transform 400ms ease-in-out, opacity 400ms ease-in-out;
-}
-
-.slide-out-left,
-.slide-in-right {
-  transform: translateX(-100vw);
-  opacity: 0;
-}
-
-.slide-out-right,
-.slide-in-left {
-  transform: translateX(100vw);
-  opacity: 0;
-}
