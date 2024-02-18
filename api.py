@@ -14,6 +14,10 @@ import uuid
 import datetime
 from collections import defaultdict
 
+import logging
+
+logging.basicConfig(level=logging.ERROR)
+
 load_dotenv()
 
 
@@ -124,14 +128,13 @@ class Scraper:
         with open("sites.txt", "r") as f:
             websites = list(map(lambda x: x.strip(), f.readlines()))
 
-        n3k.build(websites[0], language="en")
-        sys.exit()
-
         def get_brand(website):
             return [website, n3k.build(website, language="en").brand]
 
         with concurrent.futures.ThreadPoolExecutor() as executor:
             websites = list(executor.map(get_brand, websites))
+
+        print("Websites", len(websites))
 
         # for i in websites:
         #     print(i)
